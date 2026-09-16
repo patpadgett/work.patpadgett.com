@@ -15,7 +15,7 @@
 <meta property="og:type" content="profile">
 <link rel="canonical" href="https://work.patpadgett.com/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Patrick Padgett", "jobTitle": "Telecom Billing Mediation Engineer", "email": "mailto:pat@patpadgett.com", "telephone": "+1-816-601-5983", "url": "https://work.patpadgett.com/", "mainEntityOfPage": "https://work.patpadgett.com/", "image": "https://work.patpadgett.com/assets/avatar@2x.jpg", "address": {"@type": "PostalAddress", "addressRegion": "FL", "addressLocality": "Tampa Bay", "addressCountry": "US"}, "sameAs": ["https://patpadgett.com", "https://www.linkedin.com/in/patpadgett", "https://github.com/patpadgett", "https://music.patpadgett.com", "https://blog.patpadgett.com", "https://en.wikipedia.org/wiki/Corkscrew_(program)"], "hasOccupation": [{"@type": "Occupation", "name": "Telecom Billing Mediation Engineer", "skills": "Billing mediation, revenue assurance, CDR/AMA processing, Nortel DMS, Ericsson AXE, Lucent 5ESS, Perl, Python, shell"}, {"@type": "Occupation", "name": "Infrastructure Automation Engineer", "skills": "Kubernetes, Jenkins, Ansible, Linux, Ruby on Rails, CI/CD"}], "knowsAbout": ["Telecom billing mediation", "Revenue assurance", "AMA / CDR data", "Nortel DMS switch data", "Ericsson AXE", "Lucent 5ESS", "Kubernetes", "Jenkins", "Linux systems administration", "corkscrew (SSH over HTTP proxy)"], "alumniOf": {"@type": "EducationalOrganization", "name": "Lake Area Vo-Tech, Camdenton MO"}, "worksFor": {"@type": "Organization", "name": "VimOps"}, "alumniOf": [{"@type": "Organization", "name": "Sprint / T-Mobile"}, {"@type": "Organization", "name": "Jabil"}, {"@type": "Organization", "name": "Raymond James"}], "subjectOf": {"@type": "SoftwareApplication", "name": "corkscrew", "url": "https://github.com/patpadgett/corkscrew", "sameAs": "https://en.wikipedia.org/wiki/Corkscrew_(program)", "applicationCategory": "Networking", "operatingSystem": "Linux, BSD, Unix", "author": {"@type": "Person", "name": "Patrick Padgett"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Patrick Padgett", "jobTitle": "Telecom Billing Mediation Engineer", "email": "mailto:pat@patpadgett.com", "telephone": "+1-816-601-5983", "url": "https://work.patpadgett.com/", "mainEntityOfPage": "https://work.patpadgett.com/", "image": "https://work.patpadgett.com/assets/avatar@2x.jpg", "address": {"@type": "PostalAddress", "addressRegion": "FL", "addressLocality": "Tampa Bay", "addressCountry": "US"}, "sameAs": ["https://patpadgett.com", "https://www.linkedin.com/in/patpadgett", "https://github.com/patpadgett", "https://music.patpadgett.com", "https://blog.patpadgett.com", "https://en.wikipedia.org/wiki/Corkscrew_(program)"], "hasOccupation": [{"@type": "Occupation", "name": "Telecom Billing Mediation Engineer", "skills": "Billing mediation, revenue assurance, CDR/AMA processing, Nortel DMS, Ericsson AXE, Lucent 5ESS, Perl, Python, shell"}, {"@type": "Occupation", "name": "Infrastructure Automation Engineer", "skills": "Kubernetes, Jenkins, Ansible, Linux, Ruby on Rails, CI/CD"}], "knowsAbout": ["Telecom billing mediation", "Revenue assurance", "AMA / CDR data", "Nortel DMS switch data", "Ericsson AXE", "Lucent 5ESS", "Kubernetes", "Jenkins", "Linux systems administration", "corkscrew (SSH over HTTP proxy)"], "worksFor": {"@type": "Organization", "name": "VimOps"}, "alumniOf": [{"@type": "EducationalOrganization", "name": "Lake Area Vo-Tech, Camdenton MO"}, {"@type": "Organization", "name": "Sprint / T-Mobile"}, {"@type": "Organization", "name": "Jabil"}, {"@type": "Organization", "name": "Raymond James"}], "subjectOf": {"@type": "SoftwareApplication", "name": "corkscrew", "url": "https://github.com/patpadgett/corkscrew", "sameAs": "https://en.wikipedia.org/wiki/Corkscrew_(program)", "applicationCategory": "Networking", "operatingSystem": "Linux, BSD, Unix", "author": {"@type": "Person", "name": "Patrick Padgett"}}}</script>
 <style>
 @font-face {
   font-family: 'VT323';
@@ -73,7 +73,6 @@
 * { box-sizing: border-box; margin: 0; }
 html { color-scheme: dark; scroll-behavior: smooth; scroll-padding-top: 3.25rem; -webkit-text-size-adjust: 100%; background: var(--crt); }
 body {
-  overflow-x: clip;
   font-family: var(--mono); font-size: 1rem; line-height: 1.55; color: var(--fg); background: var(--crt);
   font-variant-numeric: tabular-nums; min-height: 100vh;
 }
@@ -303,6 +302,9 @@ h1 .name { display: block; color: var(--fg); font-size: clamp(1.35rem, 2.2vw, 1.
 .mail .hdrs b { color: var(--amber); font-weight: 600; }
 .mail .field { display: grid; gap: .35rem; margin-bottom: 1.35rem; }
 .mail label { display: block; color: var(--ph-70); font-size: .9rem; text-transform: uppercase; letter-spacing: .06em; }
+.mail .req { color: var(--amber); }
+.mail .opt { text-transform: none; letter-spacing: 0; color: var(--ph-40); margin-left: .5ch; }
+.mail .hdrs span:last-child::after { content: " · * required"; color: var(--ph-40); }
 .mail input, .mail textarea {
   font: inherit; font-size: 1rem; text-transform: none; letter-spacing: 0; color: var(--ph); background: var(--crt); border: 1px solid var(--ph-15); padding: .6rem .75rem;
   border-radius: 0; caret-color: var(--amber); width: 100%; text-shadow: var(--glow);
@@ -412,9 +414,9 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
     <div class="out">
       <h2 id="h-proof">About</h2>
       <div class="proof-grid">
-        <p class="lede">Telecom billing mediation and revenue assurance engineer with 14 years as highest-tier SME for Sprint&#x27;s wireless and wireline mediation platforms (Nortel, Ericsson and Lucent switch AMA/CDR data), followed by senior infrastructure automation roles at Jabil and Raymond James. Builds and operates CDR/EDR usage pipelines that are faster, observable and repeatable: Linux, Ansible, Docker, Kubernetes, Terraform, CI/CD, ELK. 25 years of production Linux.</p>
+        <p class="lede">Telecom billing mediation and revenue assurance engineer with 14 years as highest-tier SME for Sprint&#x27;s wireless and wireline mediation platforms (Nortel, Ericsson and Lucent switch AMA/CDR data), followed by senior infrastructure automation roles at Jabil and Raymond James. Builds and operates CDR/EDR usage pipelines that are faster, observable and repeatable: Linux, Ansible, Docker, Kubernetes, Terraform, CI/CD, ELK. production Linux since 1996.</p>
         <dl class="uptime" aria-label="Tenure">
-          <div><dt>25</dt><dd>years of production Linux, 1996 to now</dd></div>
+          <div><dt data-years-since="1996">30</dt><dd>years of production Linux, 1996 to now</dd></div>
           <div><dt>14</dt><dd>years as Tier 3 escalation point for Sprint billing mediation</dd></div>
           <div><dt>3</dt><dd>public clouds automated: AWS, Azure, GCP</dd></div>
           <div><dt>5</dt><dd>OS distributions package corkscrew: Debian, Ubuntu, Red Hat, CentOS, FreeBSD</dd></div>
@@ -572,10 +574,10 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
       <form class="mail" method="post" action="#" novalidate aria-describedby="form-note">
         <div class="hdrs"><span><b>To:</b> pat@patpadgett.com</span><span><b>Subject:</b> job</span></div>
         <p class="form-note" id="form-note">Fill this in and it opens a ready-to-send draft in your mail app — or just email <a href="mailto:pat@patpadgett.com">pat@patpadgett.com</a>.</p>
-        <div class="field"><label for="f-name">From (name)</label><input id="f-name" type="text" name="name" autocomplete="name" required aria-describedby="e-name"><span class="err" id="e-name">Add your name so the reply has a greeting.</span></div>
-        <div class="field"><label for="f-email">Reply-To</label><input id="f-email" type="email" name="email" autocomplete="email" required aria-describedby="e-email"><span class="err" id="e-email">A working email address, so the reply can reach you.</span></div>
-        <div class="field"><label for="f-role">Role or company</label><input id="f-role" type="text" name="role" autocomplete="organization"></div>
-        <div class="field"><label for="f-msg">Body</label><textarea id="f-msg" name="message" rows="5" required aria-describedby="e-msg"></textarea><span class="err" id="e-msg">A line or two about the role is enough.</span></div>
+        <div class="field"><label for="f-name">From (name) <span class="req" aria-hidden="true">*</span></label><input id="f-name" type="text" name="name" autocomplete="name" required aria-describedby="e-name"><span class="err" id="e-name">Add your name so the reply has a greeting.</span></div>
+        <div class="field"><label for="f-email">Reply-To <span class="req" aria-hidden="true">*</span></label><input id="f-email" type="email" name="email" autocomplete="email" required aria-describedby="e-email"><span class="err" id="e-email">A working email address, so the reply can reach you.</span></div>
+        <div class="field"><label for="f-role">Role or company <small class="opt">optional</small></label><input id="f-role" type="text" name="role" autocomplete="organization"></div>
+        <div class="field"><label for="f-msg">Body <span class="req" aria-hidden="true">*</span></label><textarea id="f-msg" name="message" rows="5" required aria-describedby="e-msg"></textarea><span class="err" id="e-msg">A line or two about the role is enough.</span></div>
         <button type="submit" class="btn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Compose email</span></button>
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
@@ -613,6 +615,9 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
   function navOverflow() { navUl.classList.toggle('is-overflowing', navUl.scrollWidth > navUl.clientWidth + 1); }
   navOverflow(); addEventListener('resize', navOverflow);
   document.querySelectorAll('.status ul a').forEach(function (a) { a.addEventListener('focus', function () { a.scrollIntoView({ block: 'nearest', inline: 'center' }); }); });
+
+  /* ---- tenure: years since 1996, computed so the copy never goes stale ---- */
+  document.querySelectorAll('[data-years-since]').forEach(function (el) { el.textContent = String(new Date().getFullYear() - parseInt(el.getAttribute('data-years-since'), 10)); });
 
   /* ---- uptime counter in the banner: seconds since 1996-09-01 ---- */
   var up = document.querySelector('[data-uptime]');
@@ -744,7 +749,7 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
     if (form.getAttribute('action') === '#') {
       ev.preventDefault();
       var status = form.querySelector('.form-status');
-      status.textContent = 'Opening a draft in your mail app. If nothing happens, use the email link above — your text is still here.';
+      status.innerHTML = 'Opening a draft in your mail app. If nothing happens, email <a href="mailto:pat@patpadgett.com">pat@patpadgett.com</a> — your text is still here.';
       var d = new FormData(form);
       var body = 'From: ' + d.get('name') + ' <' + d.get('email') + '>\nRole/company: ' + d.get('role') + '\n\n' + d.get('message');
       window.location.href = 'mailto:pat@patpadgett.com?subject=' + encodeURIComponent('[patpadgett.com] ' + (d.get('role') || 'hello from ' + d.get('name'))) + '&body=' + encodeURIComponent(body);

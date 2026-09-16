@@ -202,10 +202,17 @@ The detector flattens `print.css` into the screen cascade, so it reports `#11111
 - Experience is strict reverse chronology: Sprint (2001–2015) before CyberRazor (2005–2009).
 - Form: `#form-status` `role="status"` live region carries the handoff message; the note's email anchor is never replaced.
 - Nav scroller applies to 62rem (768 overflowed with no cue); focused cells scroll into view; focus-visible adds an inset amber bar to distinguish from `is-active`.
-- `body` no longer hides horizontal overflow — the layout fits.
+- Neither `html` nor `body` clips horizontal overflow — the layout fits at 320–1920.
 
 ## Critique #3 refinements
 - Form fields are `.field` groups (label tight to its control, 1.35rem between fields); `#form-status` sits under the Compose email button.
 - Nav end-cap `›` renders only when `.status ul` actually overflows (`is-overflowing`, set by JS on load/resize); focused cells centre in the scroller.
 - Print hides the `ls` download listing and drops appended URLs on contact wires whose text is already the address.
 - JSON-LD: `worksFor` = current (VimOps); past employers under `alumniOf`.
+
+## Critique #4 refinements
+- Tenure count is computed (`data-years-since="1996"`) so "years of production Linux" never drifts; source résumé still says "25 years" — reconcile in build_resume.py when next rebuilt.
+- Required fields carry an amber `*` (aria-hidden; `required` does the accessible work); Role is marked optional; the mail header notes "* required".
+- Handoff status includes its own mailto link, so recovery is one tap from the button.
+- Print: `.quote` white with a hairline, ^G badge hidden, quote marks black.
+- JSON-LD `alumniOf` merged into one array (education + past employers).

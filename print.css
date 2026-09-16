@@ -41,3 +41,8 @@ h1 .name::before { content: none; }
 /* print: no download furniture; URLs only where the text isn't already the URL */
 .ls, #contact .ls-head, #contact .files { display: none !important; }
 .wires a::after { content: none !important; }
+
+/* recommendations readable on paper */
+.quote { background: #fff !important; border: 1px solid #111 !important; }
+.quote::after { display: none !important; }
+.quote p::before, .quote p::after { color: #111 !important; }
