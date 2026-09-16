@@ -20,3 +20,20 @@ a { text-decoration: underline; }
 .banner { font-size: .8rem; margin-bottom: .5rem; }
 h1 .name { font-size: 1.4rem; font-weight: 700; text-transform: none; letter-spacing: 0; }
 h1 .name::before { content: none; }
+
+/* header as a document head, not a landing hero */
+.hero { display: grid !important; grid-template-columns: minmax(0,1fr) 8rem !important; grid-template-rows: auto auto !important; gap: 0 1.5rem !important; align-items: start !important; }
+.hero-copy { grid-column: 1; grid-row: 1; }
+.fb { grid-column: 2 !important; grid-row: 1 !important; width: 8rem; margin: 0; padding: 0 !important; border: 0 !important; background: none !important; }
+.gauges { grid-column: 1 / -1 !important; grid-row: 2 !important; }
+.fb::before, .fb::after, .tube::before, .tube::after { display: none !important; content: none !important; }
+.fb img { width: 8rem !important; height: 8rem !important; filter: grayscale(1) contrast(1.1) !important; mix-blend-mode: normal !important; }
+.display { font-size: 2.6rem !important; line-height: .9 !important; text-shadow: none !important; }
+.display .w { display: inline !important; }
+.display .w + .w::before { content: " "; }
+.where { font-weight: 700; }
+.dl { display: none !important; }
+.gauges { display: flex !important; gap: 2rem; border: 0; padding: .5rem 0 0; }
+.gauge .num { font-size: 1.6rem !important; text-shadow: none !important; }
+.btn, .btn-dl { display: none !important; }
+.wires { margin-top: .5rem; }

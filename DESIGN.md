@@ -182,6 +182,8 @@ The detector flattens `print.css` into the screen cascade, so it reports `#11111
 
 ## Print
 
+`print.css` is linked AFTER the inline screen stylesheet so its equal-specificity overrides win; the portrait resets `mix-blend-mode` to normal (screen-blend vanishes on white).
+
 `print.css` (media="print") turns the session into a document: white ground, #111 text, no glow/scanlines/nav/form/typed commands, all output forced visible, links expose their URL, portrait grayscale. Roughly nine Letter pages; the PDF résumé remains the intended print artefact and is the first thing the page offers.
 
 ## Do's and Don'ts
@@ -193,3 +195,11 @@ The detector flattens `print.css` into the screen cascade, so it reports `#11111
 **Don't** let `overflow-x: hidden` stand in for a layout that fits.
 **Don't** promise delivery the page can't perform — label the form by what it does.
 **Don't** re-introduce the six-line fake login; two lines of banner is the ceiling.
+
+## Critique #2 refinements
+- Location/availability is its own amber line above the proof sentence; the proof sentence no longer carries geography.
+- ≤30rem: banner drops its second line, display 3rem, tighter stack — name, role, location, proof and the PDF button fit 320×700 (button bottom 697).
+- Experience is strict reverse chronology: Sprint (2001–2015) before CyberRazor (2005–2009).
+- Form: `#form-status` `role="status"` live region carries the handoff message; the note's email anchor is never replaced.
+- Nav scroller applies to 62rem (768 overflowed with no cue); focused cells scroll into view; focus-visible adds an inset amber bar to distinguish from `is-active`.
+- `body` no longer hides horizontal overflow — the layout fits.

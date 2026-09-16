@@ -15,7 +15,6 @@
 <meta property="og:type" content="profile">
 <link rel="canonical" href="https://work.patpadgett.com/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="print.css" media="print">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Patrick Padgett", "jobTitle": "Telecom Billing Mediation Engineer", "email": "mailto:pat@patpadgett.com", "telephone": "+1-816-601-5983", "url": "https://work.patpadgett.com/", "mainEntityOfPage": "https://work.patpadgett.com/", "image": "https://work.patpadgett.com/assets/avatar@2x.jpg", "address": {"@type": "PostalAddress", "addressRegion": "FL", "addressLocality": "Tampa Bay", "addressCountry": "US"}, "sameAs": ["https://patpadgett.com", "https://www.linkedin.com/in/patpadgett", "https://github.com/patpadgett", "https://music.patpadgett.com", "https://blog.patpadgett.com", "https://en.wikipedia.org/wiki/Corkscrew_(program)"], "hasOccupation": [{"@type": "Occupation", "name": "Telecom Billing Mediation Engineer", "skills": "Billing mediation, revenue assurance, CDR/AMA processing, Nortel DMS, Ericsson AXE, Lucent 5ESS, Perl, Python, shell"}, {"@type": "Occupation", "name": "Infrastructure Automation Engineer", "skills": "Kubernetes, Jenkins, Ansible, Linux, Ruby on Rails, CI/CD"}], "knowsAbout": ["Telecom billing mediation", "Revenue assurance", "AMA / CDR data", "Nortel DMS switch data", "Ericsson AXE", "Lucent 5ESS", "Kubernetes", "Jenkins", "Linux systems administration", "corkscrew (SSH over HTTP proxy)"], "alumniOf": {"@type": "EducationalOrganization", "name": "Lake Area Vo-Tech, Camdenton MO"}, "worksFor": [{"@type": "Organization", "name": "Sprint / T-Mobile"}, {"@type": "Organization", "name": "Jabil"}, {"@type": "Organization", "name": "Raymond James"}], "subjectOf": {"@type": "SoftwareApplication", "name": "corkscrew", "url": "https://github.com/patpadgett/corkscrew", "sameAs": "https://en.wikipedia.org/wiki/Corkscrew_(program)", "applicationCategory": "Networking", "operatingSystem": "Linux, BSD, Unix", "author": {"@type": "Person", "name": "Patrick Padgett"}}}</script>
 <style>
 @font-face {
@@ -76,7 +75,7 @@ html { color-scheme: dark; scroll-behavior: smooth; scroll-padding-top: 3.25rem;
 body {
   overflow-x: clip;
   font-family: var(--mono); font-size: 1rem; line-height: 1.55; color: var(--fg); background: var(--crt);
-  font-variant-numeric: tabular-nums; min-height: 100vh; overflow-x: hidden;
+  font-variant-numeric: tabular-nums; min-height: 100vh;
 }
 ::selection { background: var(--ph); color: var(--crt); }
 a { color: var(--ph); text-decoration: underline; text-decoration-color: var(--ph-40); text-underline-offset: .2em; text-decoration-thickness: 1px; }
@@ -118,7 +117,7 @@ pre, code, kbd { font-family: inherit; }
   background: var(--ph-15); color: var(--ph); border-bottom: 1px solid var(--ph-40); font-size: .9rem; overflow: hidden;
 }
 .status ul { display: flex; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-@media (max-width: 47.9rem) {
+@media (max-width: 62rem) {
   .status ul { overflow-x: auto; scroll-snap-type: x proximity; }
   .status ul::after { content: '\203A'; flex: none; display: flex; align-items: center; padding: 0 .5rem 0 .2rem; color: var(--amber); position: sticky; right: 0; background: linear-gradient(90deg, transparent, var(--ph-15) 40%); }
   .status ul a { padding: 0 .7rem; font-size: .85rem; scroll-snap-align: start; }
@@ -130,6 +129,7 @@ pre, code, kbd { font-family: inherit; }
 .status a { display: flex; align-items: center; padding: 0 .9rem; color: var(--ph); text-decoration: none; white-space: nowrap; height: 100%; position: relative; }
 .status a b { font-weight: 600; margin-right: .35em; color: var(--amber); }
 .status a:hover, .status a:focus-visible { background: var(--ph); color: var(--crt); outline: none; }
+.status a:focus-visible { box-shadow: inset 0 -3px 0 var(--amber); }
 .status a:hover b, .status a.is-active b { color: inherit; }
 .status a.is-active { background: var(--ph); color: var(--crt); }
 .status a.is-active::after { content: "*"; margin-left: .15em; }
@@ -182,7 +182,10 @@ h1 .name { display: block; color: var(--fg); font-size: clamp(1.35rem, 2.2vw, 1.
 .display .w:nth-child(2) { color: var(--amber); text-shadow: 0 0 .12em rgba(255, 176, 0, .55); }
 
 .js .display .w { opacity: 0; animation: printfx .45s steps(8, end) both; animation-delay: calc(1.1s + var(--n) * .18s); }
-.subline { margin-top: 1.5rem; max-width: 48ch; font-size: 1.05rem; text-wrap: balance; }
+.where { margin-top: 1rem; color: var(--amber); font-weight: 600; font-size: .95rem; letter-spacing: .02em; }
+.subline { margin-top: .75rem; max-width: 48ch; font-size: 1.05rem; text-wrap: balance; }
+.js .where { opacity: 0; animation: print .01s both; animation-delay: 1.9s; }
+@media (max-width: 30rem) { .banner .motd { display: none; } .banner { margin-bottom: .75rem; font-size: .85rem; } .login .cmd { margin-bottom: .5rem; } h1 .name { margin-bottom: .4rem; } .display { font-size: 3rem; } .where { margin-top: .75rem; } .subline { font-size: .95rem; margin-top: .5rem; } .dl { margin-top: .85rem; } .dl .btn-dl { padding: .65rem 1rem; } }
 .dl { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; }
 .dl .btn-dl { text-decoration: none; }
 .dl-alt { color: var(--ph); text-decoration: underline; text-decoration-color: var(--ph-40); text-underline-offset: .2em; padding: .5rem 0; display: inline-block; }
@@ -309,6 +312,8 @@ h1 .name { display: block; color: var(--fg); font-size: clamp(1.35rem, 2.2vw, 1.
 .mail .err { display: none; text-transform: none; letter-spacing: 0; color: var(--amber); font-size: .9rem; }
 .mail.was-submitted input:invalid + .err, .mail.was-submitted textarea:invalid + .err { display: block; }
 .form-note { font-size: .95rem; color: var(--fg); margin-bottom: 1.25rem; }
+.form-status { font-size: .95rem; color: var(--amber); margin: -.5rem 0 1rem; min-height: 0; }
+.form-status:empty { display: none; }
 .btn {
   display: inline-flex; align-items: center; gap: .6rem; font: inherit; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .9rem;
   color: var(--crt); background: var(--ph); border: 1px solid var(--ph); padding: .75rem 1.25rem; cursor: pointer; text-shadow: none; box-shadow: var(--glow);
@@ -331,12 +336,13 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js .tube, .js .fb, .js .cur, .tube::after { animation: none !important; }
-  .js .out > *, .js .display .w, .js .subline, .js .dl, .js .frame-note, .js .gauge, .js .quote { opacity: 1 !important; animation: none !important; clip-path: none !important; }
+  .js .out > *, .js .display .w, .js .subline, .js .where, .js .dl, .js .frame-note, .js .gauge, .js .quote { opacity: 1 !important; animation: none !important; clip-path: none !important; }
   .js .cmd .typed { visibility: visible !important; }
   .js .cmd .cur { display: none; }
 }
 
 </style>
+<link rel="stylesheet" href="print.css" media="print">
 </head>
 <body>
 <a class="skip" href="#proof">Skip to content</a>
@@ -352,7 +358,7 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
 
 <header class="login" id="top" data-run>
  <div class="wrap">
-  <pre class="banner" aria-label="Login banner">patpadgett.com (ttyS0) · <b>uptime:</b> <span data-uptime>29 years</span> of production Linux.
+  <pre class="banner" aria-label="Login banner">patpadgett.com (ttyS0) · <b>uptime:</b> <span data-uptime aria-hidden="true">29 years</span> of production Linux.
 <span class="motd">Solaris, HP-UX and AIX before that were someone else's problem, but I fixed them anyway.</span></pre>
   <span class="cmd" aria-hidden="true"><span class="ps1"><b>pat@patpadgett</b>:~$ </span><span class="typed" data-text="finger pat">finger pat</span><span class="cur"></span></span>
   <div class="hero out">
@@ -361,9 +367,10 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
         <span class="name">Patrick Padgett</span>
         <span class="display" aria-label="Telecom billing mediation engineer"><span class="w" style="--n:0">Telecom</span><span class="w" style="--n:1">Billing</span><span class="w" style="--n:2">Mediation</span><span class="w" style="--n:3">Engineer</span></span>
       </h1>
-      <p class="subline">Fourteen years as Sprint's Tier-3 SME for wireless and wireline billing mediation — Nortel, Ericsson and Lucent switch AMA/CDR — then Kubernetes at Jabil and Jenkins at Raymond James. <span class="nowrap">Greater Tampa Bay, FL.</span> Open to remote, hybrid or contract.</p>
+      <p class="where"><span class="nowrap">Greater Tampa Bay, FL</span> · remote, hybrid or contract</p>
+      <p class="subline">Fourteen years as Sprint's <span class="nowrap">Tier-3</span> SME for wireless and wireline billing mediation — Nortel, Ericsson and Lucent switch AMA/CDR — then Kubernetes at Jabil and Jenkins at Raymond James.</p>
       <p class="dl" aria-label="Download résumé"><a class="btn btn-dl" href="assets/Patrick_Padgett_Resume.pdf" download><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3v12M6 9l6 6 6-6M4 21h16"/></svg><span>Download résumé (PDF)</span></a><a class="dl-alt" href="assets/Patrick_Padgett_Resume.docx" download>Word</a><a class="dl-alt" href="assets/Patrick_Padgett_Resume.md" download>Markdown</a></p>
-      <p class="frame-note">Rendered as a terminal because that is where the work has always happened: a shell on a box that pays the bills, since the ISP days of <a href="#more">1996</a>.</p>
+      <p class="frame-note">Rendered as a terminal because that is where the work has always happened: a shell on a box that pays the bills, since the ISP days of <a href="#job-6">1996</a>.</p>
     </div>
     <figure class="fb">
       <img src="assets/avatar.jpg" srcset="assets/avatar.jpg 1x, assets/avatar@2x.jpg 2x" width="320" height="320" alt="Portrait of Patrick Padgett">
@@ -451,18 +458,18 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
           <ul><li>Led development and product management for the SharePoint products &quot;Intranet&quot; and &quot;Analytics&quot;.</li></ul>
         </div>
       </article>
-      <article class="job" id="job-4">
-        <p class="dates"><time><span class="nowrap">2005–2009</span></time></p>
-        <div class="job-body">
-          <h3>Founder <span class="org">CyberRazor, part-time alongside Sprint</span></h3>
-          <ul><li>Built Fasttrack, a Ruby on Rails web application for standard celeration charting used by behavior analysts, and trained educators on it; analyzed HCRIS healthcare cost data for tax firms; built small-business sites.</li></ul>
-        </div>
-      </article>
       <article class="job" id="job-5">
         <p class="dates"><time><span class="nowrap">2001–2015</span></time></p>
         <div class="job-body">
           <h3>Software Engineer (Accounting Operations) <span class="org">Sprint (now T-Mobile)</span></h3>
           <ul><li>Highest-tier (Tier 3) production support and incident response for all Sprint billing mediation platforms: the ETL data pipelines that collect, validate, rate and route wireless and wireline CDR/EDR usage records; root cause analysis and on-call escalation point for 14 years.</li><li>Designed and led development of an EDR routing application that collected switch usage records and distributed them to rating, billing, fraud and analytics systems; $2M in revenue assurance savings.</li><li>Increased mediation throughput 250% by re-architecting record processing across parallel processors using Perl, Oracle SQL and Linux.</li><li>Cut alarm time-to-resolution 50% by building observability and alerting on the ELK stack (Elasticsearch, Logstash and Kibana) for multiple mediation platforms.</li><li>Wrote a business-rule translation tool (Perl, Parse::RecDescent) and an Ansible + GitLab CI production change-management system; authored platform documentation cited by network operations leadership.</li><li>Delivered project D3884 ahead of an aggressive schedule and under budget with no customer service impact, coordinating stakeholders across network, finance and operations; commended by Sprint&#x27;s Chief Network Officer for the result.</li></ul>
+        </div>
+      </article>
+      <article class="job" id="job-4">
+        <p class="dates"><time><span class="nowrap">2005–2009</span></time></p>
+        <div class="job-body">
+          <h3>Founder <span class="org">CyberRazor, part-time alongside Sprint</span></h3>
+          <ul><li>Built Fasttrack, a Ruby on Rails web application for standard celeration charting used by behavior analysts, and trained educators on it; analyzed HCRIS healthcare cost data for tax firms; built small-business sites.</li></ul>
         </div>
       </article>
       <article class="job" id="job-6">
@@ -564,6 +571,7 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
       <form class="mail" method="post" action="#" novalidate aria-describedby="form-note">
         <div class="hdrs"><span><b>To:</b> pat@patpadgett.com</span><span><b>Subject:</b> job</span></div>
         <p class="form-note" id="form-note">Fill this in and it opens a ready-to-send draft in your mail app — or just email <a href="mailto:pat@patpadgett.com">pat@patpadgett.com</a>.</p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         <label for="f-name">From (name)</label><input id="f-name" type="text" name="name" autocomplete="name" required aria-describedby="e-name"><span class="err" id="e-name">Add your name so the reply has a greeting.</span>
         <label for="f-email">Reply-To</label><input id="f-email" type="email" name="email" autocomplete="email" required aria-describedby="e-email"><span class="err" id="e-email">A working email address, so the reply can reach you.</span>
         <label for="f-role">Role or company</label><input id="f-role" type="text" name="role" autocomplete="organization">
@@ -598,6 +606,9 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
     clock.textContent = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()] + ' ' + p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds());
   }
   tick(); setInterval(tick, 1000);
+
+  /* ---- nav: keep the focused cell inside the scroller ---- */
+  document.querySelectorAll('.status ul a').forEach(function (a) { a.addEventListener('focus', function () { a.scrollIntoView({ block: 'nearest', inline: 'nearest' }); }); });
 
   /* ---- uptime counter in the banner: seconds since 1996-09-01 ---- */
   var up = document.querySelector('[data-uptime]');
@@ -728,8 +739,8 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
     if (!form.checkValidity()) { ev.preventDefault(); var bad = form.querySelector(':invalid'); if (bad) bad.focus(); return; }
     if (form.getAttribute('action') === '#') {
       ev.preventDefault();
-      var note = form.querySelector('.form-note');
-      note.textContent = 'Opening a draft in your mail app. If nothing happens, email pat@patpadgett.com — your text is still here.';
+      var status = form.querySelector('.form-status');
+      status.textContent = 'Opening a draft in your mail app. If nothing happens, use the email link above — your text is still here.';
       var d = new FormData(form);
       var body = 'From: ' + d.get('name') + ' <' + d.get('email') + '>\nRole/company: ' + d.get('role') + '\n\n' + d.get('message');
       window.location.href = 'mailto:pat@patpadgett.com?subject=' + encodeURIComponent('[patpadgett.com] ' + (d.get('role') || 'hello from ' + d.get('name'))) + '&body=' + encodeURIComponent(body);
