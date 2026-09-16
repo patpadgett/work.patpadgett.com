@@ -220,3 +220,6 @@ The detector flattens `print.css` into the screen cascade, so it reports `#11111
 ## Critique #5 refinements
 - Footer no longer claims the formats "always agree"; the download is the document of record. Known gap: build_resume.py summary still says "25 years of production Linux" while the page computes 30 — fix the source ("Production Linux since 1996.") and regenerate PDF/DOCX/MD in /data/pat/resume-ats, then copy to assets/.
 - Print `#` heading marks are black.
+
+## Critique #6 refinements
+- Mobile/tablet status bar is 44px (≤62rem) with `scroll-padding-top` 3.75rem; 320 stack tightened (display 2.85rem, header padding 1rem) so the PDF row still clears 700px (bottom 693).

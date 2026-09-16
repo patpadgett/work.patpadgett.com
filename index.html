@@ -117,6 +117,8 @@ pre, code, kbd { font-family: inherit; }
 }
 .status ul { display: flex; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 @media (max-width: 62rem) {
+  .status { height: 2.75rem; }
+  html { scroll-padding-top: 3.75rem; }
   .status ul { overflow-x: auto; scroll-snap-type: x proximity; }
   .status ul.is-overflowing::after { content: '\203A'; flex: none; display: flex; align-items: center; padding: 0 .5rem 0 .2rem; color: var(--amber); position: sticky; right: 0; background: linear-gradient(90deg, transparent, var(--ph-15) 40%); }
   .status ul a { padding: 0 .7rem; font-size: .85rem; scroll-snap-align: start; }
@@ -184,7 +186,7 @@ h1 .name { display: block; color: var(--fg); font-size: clamp(1.35rem, 2.2vw, 1.
 .where { margin-top: 1rem; color: var(--amber); font-weight: 600; font-size: .95rem; letter-spacing: .02em; }
 .subline { margin-top: .75rem; max-width: 48ch; font-size: 1.05rem; text-wrap: balance; }
 .js .where { opacity: 0; animation: print .01s both; animation-delay: 1.9s; }
-@media (max-width: 30rem) { .banner .motd { display: none; } .banner { margin-bottom: .75rem; font-size: .85rem; } .login .cmd { margin-bottom: .5rem; } h1 .name { margin-bottom: .4rem; } .display { font-size: 3rem; } .where { margin-top: .75rem; } .subline { font-size: .95rem; margin-top: .5rem; } .dl { margin-top: .85rem; } .dl .btn-dl { padding: .65rem 1rem; } }
+@media (max-width: 30rem) { .banner .motd { display: none; } .banner { margin-bottom: .75rem; font-size: .85rem; } .login .cmd { margin-bottom: .35rem; } h1 .name { margin-bottom: .3rem; } header.login { padding-top: 1rem; } .display { font-size: 2.85rem; } .display { font-size: 3rem; } .where { margin-top: .75rem; } .subline { font-size: .95rem; margin-top: .5rem; } .dl { margin-top: .85rem; } .dl .btn-dl { padding: .65rem 1rem; } }
 .dl { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; }
 .dl .btn-dl { text-decoration: none; }
 .dl-alt { color: var(--ph); text-decoration: underline; text-decoration-color: var(--ph-40); text-underline-offset: .2em; padding: .5rem 0; display: inline-block; }
