@@ -16,14 +16,14 @@ Unresolved: deploy host.
 
 ## Direction contract
 
-THESIS: The résumé printed as the offset press proof of itself; Patrick's 1998 lithography training is the frame for a telecom career. Refuses the dark-terminal dev portfolio and the white card-and-sidebar résumé site.
+THESIS: A résumé read off a green-phosphor terminal. The shell is where the work has always happened; the record is what the shell prints. Owner decision (critique #1, 2026-09-16): keep the terminal. The earlier "Press Sheet" (offset-litho) contract was never shipped and is retired.
 
-OWN-WORLD: Bright white coated stock; process cyan #00AEEF, magenta #EC008C, yellow #FFF100, K #111. Crop marks and registration targets do grid work; a CMYK color-control bar is the nav; sections print as solid process-ink fields; downloads are job-ticket stamps; condensed grotesk display, workhorse text face, mono job-ticket labels.
+OWN-WORLD: Near-black CRT #060907; P1 phosphor green #3dff73 for the machine and the record, P3 amber #ffb000 for the operator's emphasis (metrics, dates, the typed command, the PDF cell); green-white #c9f7d3 body. VT323 for the four-word role, h2s and metrics; IBM Plex Mono for everything read closely. Glow, scanlines and a slow flicker are the monitor. Real shell commands (`finger pat`, `ls -lh ~/resume/`, `last`, `wall`, `man corkscrew`, `mail`) sit aria-hidden above each section; the labels a reader navigates by are plain English.
 
 STORY: "This man ran carrier billing pipelines for 14 years and builds them the modern way; here are the numbers, here is who vouches, here is the file."
 
-FIRST VIEWPORT: Color-control bar across the top edge (nav). Crop marks at the four trim corners. Left 60%: name small in mono ticket type, then TELECOM / BILLING / MEDIATION / ENGINEER stacked in condensed caps at poster scale, each word one process ink, "DevOps and Infrastructure Automation" as K subline. Right 40%: three registration targets carrying $2M, +250%, -50% with K captions. Bottom band: download stamps PDF / DOCX / MD (primary), Email, LinkedIn, GitHub.
+FIRST VIEWPORT (every width, 320 up): two-line banner (host, uptime), the `finger pat` prompt, name at 600 weight, TELECOM / BILLING / MEDIATION / ENGINEER one word per line, amber location + availability line, one Sprint/Jabil/Raymond James proof sentence, filled DOWNLOAD RÉSUMÉ (PDF) with Word / Markdown beside it. Desktop adds the framebuffer portrait and the three metrics in the right column.
 
-FORM: Offset lithography press sheet; candidate 3 on the grounded list; seed d33e5282. Signature interaction: elements register into place with one sharp press stroke; hovering the download stamps overprints them. Motion grammar: step easing, no fades.
+FORM: The mail composer builds a mailto: draft and says so ("Compose email"); explicit labels, live status beside the button, fallback address always present. Becomes a real POST when an endpoint exists.
 
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance.
+FINISH: print.css turns the session into a document (white, document head with grayscale portrait, no nav/form/commands/download furniture). Critique trend 14 → 25 → 28.

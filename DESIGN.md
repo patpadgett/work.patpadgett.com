@@ -203,3 +203,9 @@ The detector flattens `print.css` into the screen cascade, so it reports `#11111
 - Form: `#form-status` `role="status"` live region carries the handoff message; the note's email anchor is never replaced.
 - Nav scroller applies to 62rem (768 overflowed with no cue); focused cells scroll into view; focus-visible adds an inset amber bar to distinguish from `is-active`.
 - `body` no longer hides horizontal overflow — the layout fits.
+
+## Critique #3 refinements
+- Form fields are `.field` groups (label tight to its control, 1.35rem between fields); `#form-status` sits under the Compose email button.
+- Nav end-cap `›` renders only when `.status ul` actually overflows (`is-overflowing`, set by JS on load/resize); focused cells centre in the scroller.
+- Print hides the `ls` download listing and drops appended URLs on contact wires whose text is already the address.
+- JSON-LD: `worksFor` = current (VimOps); past employers under `alumniOf`.

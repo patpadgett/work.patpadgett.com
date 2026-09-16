@@ -37,3 +37,7 @@ h1 .name::before { content: none; }
 .gauge .num { font-size: 1.6rem !important; text-shadow: none !important; }
 .btn, .btn-dl { display: none !important; }
 .wires { margin-top: .5rem; }
+
+/* print: no download furniture; URLs only where the text isn't already the URL */
+.ls, #contact .ls-head, #contact .files { display: none !important; }
+.wires a::after { content: none !important; }
