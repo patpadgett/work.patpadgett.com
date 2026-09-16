@@ -184,7 +184,7 @@ The detector flattens `print.css` into the screen cascade, so it reports `#11111
 
 `print.css` is linked AFTER the inline screen stylesheet so its equal-specificity overrides win; the portrait resets `mix-blend-mode` to normal (screen-blend vanishes on white).
 
-`print.css` (media="print") turns the session into a document: white ground, #111 text, no glow/scanlines/nav/form/typed commands, all output forced visible, links expose their URL, portrait grayscale. Roughly nine Letter pages; the PDF résumé remains the intended print artefact and is the first thing the page offers.
+`print.css` (media="print") turns the session into a document: white ground, #111 text, no glow/scanlines/nav/form/typed commands, all output forced visible, links expose their URL, portrait grayscale. Roughly seven Letter pages; the PDF résumé remains the intended print artefact and is the first thing the page offers.
 
 ## Do's and Don'ts
 
@@ -216,3 +216,7 @@ The detector flattens `print.css` into the screen cascade, so it reports `#11111
 - Handoff status includes its own mailto link, so recovery is one tap from the button.
 - Print: `.quote` white with a hairline, ^G badge hidden, quote marks black.
 - JSON-LD `alumniOf` merged into one array (education + past employers).
+
+## Critique #5 refinements
+- Footer no longer claims the formats "always agree"; the download is the document of record. Known gap: build_resume.py summary still says "25 years of production Linux" while the page computes 30 — fix the source ("Production Linux since 1996.") and regenerate PDF/DOCX/MD in /data/pat/resume-ats, then copy to assets/.
+- Print `#` heading marks are black.

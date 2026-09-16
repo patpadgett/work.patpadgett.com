@@ -46,3 +46,4 @@ h1 .name::before { content: none; }
 .quote { background: #fff !important; border: 1px solid #111 !important; }
 .quote::after { display: none !important; }
 .quote p::before, .quote p::after { color: #111 !important; }
+h2::before { color: #111 !important; }
