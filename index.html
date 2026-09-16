@@ -15,6 +15,7 @@
 <meta property="og:type" content="profile">
 <link rel="canonical" href="https://work.patpadgett.com/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="print.css" media="print">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Patrick Padgett", "jobTitle": "Telecom Billing Mediation Engineer", "email": "mailto:pat@patpadgett.com", "telephone": "+1-816-601-5983", "url": "https://work.patpadgett.com/", "mainEntityOfPage": "https://work.patpadgett.com/", "image": "https://work.patpadgett.com/assets/avatar@2x.jpg", "address": {"@type": "PostalAddress", "addressRegion": "FL", "addressLocality": "Tampa Bay", "addressCountry": "US"}, "sameAs": ["https://patpadgett.com", "https://www.linkedin.com/in/patpadgett", "https://github.com/patpadgett", "https://music.patpadgett.com", "https://blog.patpadgett.com", "https://en.wikipedia.org/wiki/Corkscrew_(program)"], "hasOccupation": [{"@type": "Occupation", "name": "Telecom Billing Mediation Engineer", "skills": "Billing mediation, revenue assurance, CDR/AMA processing, Nortel DMS, Ericsson AXE, Lucent 5ESS, Perl, Python, shell"}, {"@type": "Occupation", "name": "Infrastructure Automation Engineer", "skills": "Kubernetes, Jenkins, Ansible, Linux, Ruby on Rails, CI/CD"}], "knowsAbout": ["Telecom billing mediation", "Revenue assurance", "AMA / CDR data", "Nortel DMS switch data", "Ericsson AXE", "Lucent 5ESS", "Kubernetes", "Jenkins", "Linux systems administration", "corkscrew (SSH over HTTP proxy)"], "alumniOf": {"@type": "EducationalOrganization", "name": "Lake Area Vo-Tech, Camdenton MO"}, "worksFor": [{"@type": "Organization", "name": "Sprint / T-Mobile"}, {"@type": "Organization", "name": "Jabil"}, {"@type": "Organization", "name": "Raymond James"}], "subjectOf": {"@type": "SoftwareApplication", "name": "corkscrew", "url": "https://github.com/patpadgett/corkscrew", "sameAs": "https://en.wikipedia.org/wiki/Corkscrew_(program)", "applicationCategory": "Networking", "operatingSystem": "Linux, BSD, Unix", "author": {"@type": "Person", "name": "Patrick Padgett"}}}</script>
 <style>
 @font-face {
@@ -117,6 +118,13 @@ pre, code, kbd { font-family: inherit; }
   background: var(--ph-15); color: var(--ph); border-bottom: 1px solid var(--ph-40); font-size: .9rem; overflow: hidden;
 }
 .status ul { display: flex; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+@media (max-width: 47.9rem) {
+  .status ul { overflow-x: auto; scroll-snap-type: x proximity; }
+  .status ul::after { content: '\203A'; flex: none; display: flex; align-items: center; padding: 0 .5rem 0 .2rem; color: var(--amber); position: sticky; right: 0; background: linear-gradient(90deg, transparent, var(--ph-15) 40%); }
+  .status ul a { padding: 0 .7rem; font-size: .85rem; scroll-snap-align: start; }
+  .status .win-home { display: none; }
+  .status .win-dl { padding: 0 .9rem 0 .7rem; }
+}
 .status ul li { flex: none; }
 .status ul::-webkit-scrollbar { display: none; }
 .status a { display: flex; align-items: center; padding: 0 .9rem; color: var(--ph); text-decoration: none; white-space: nowrap; height: 100%; position: relative; }
@@ -168,17 +176,22 @@ header.login { border-top: 0; padding-top: 1.5rem; }
 .banner .motd { color: var(--fg); }
 .hero { display: grid; gap: 2.5rem var(--pad); grid-template-columns: 1fr; align-items: start; }
 @media (min-width: 60rem) { .hero { grid-template-columns: minmax(0, 1fr) 22rem; } .hero .fb { grid-column: 2; grid-row: 1; } .hero .gauges { grid-column: 2; grid-row: 2; grid-template-columns: 1fr; gap: 1rem; margin-top: 0; } .hero-copy { grid-row: 1 / span 2; } }
-h1 .name { display: block; color: var(--ph-70); font-size: 1rem; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .75rem; }
-h1 .name::before { content: "USER "; color: var(--ph-40); }
+h1 .name { display: block; color: var(--fg); font-size: clamp(1.35rem, 2.2vw, 1.75rem); font-weight: 600; letter-spacing: .02em; margin-bottom: .6rem; }
 .display { display: block; font-family: var(--vt); font-weight: 400; line-height: .84; font-size: clamp(3.4rem, 9vw, 6.6rem); color: var(--ph); text-shadow: 0 0 .12em rgba(61, 255, 115, .55); letter-spacing: .01em; }
 .display .w { display: block; }
 .display .w:nth-child(2) { color: var(--amber); text-shadow: 0 0 .12em rgba(255, 176, 0, .55); }
 
 .js .display .w { opacity: 0; animation: printfx .45s steps(8, end) both; animation-delay: calc(1.1s + var(--n) * .18s); }
 .subline { margin-top: 1.5rem; max-width: 48ch; font-size: 1.05rem; text-wrap: balance; }
-.frame-note { margin-top: 1rem; max-width: 52ch; color: var(--ph-70); font-size: .95rem; }
+.dl { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; }
+.dl .btn-dl { text-decoration: none; }
+.dl-alt { color: var(--ph); text-decoration: underline; text-decoration-color: var(--ph-40); text-underline-offset: .2em; padding: .5rem 0; display: inline-block; }
+.dl-alt::before { content: "also as "; color: var(--ph-70); }
+.dl-alt + .dl-alt::before { content: "/ "; }
+.js .dl { opacity: 0; animation: print .01s both; animation-delay: 2.05s; }
+.frame-note { margin-top: 1.25rem; max-width: 52ch; color: var(--ph-70); font-size: .95rem; }
 .js .subline, .js .frame-note { opacity: 0; animation: print .01s both; animation-delay: 1.95s; }
-.js .frame-note { animation-delay: 2.15s; }
+.js .frame-note { animation-delay: 2.25s; }
 
 /* portrait as a framebuffer dump */
 .fb { position: relative; width: min(14rem, 100%); background: var(--ph-06); border: 1px solid var(--ph-40); padding: .5rem; }
@@ -196,7 +209,7 @@ h1 .name::before { content: "USER "; color: var(--ph-40); }
 .gauge .bar { display: block; margin: .25rem 0; color: var(--ph); letter-spacing: -.02em; font-size: .95rem; white-space: nowrap; overflow: hidden; text-shadow: var(--glow); }
 .gauge .bar .fill { display: inline-block; }
 .gauge .bar .rest { color: var(--ph-40); text-shadow: none; }
-.gauge .cap { display: block; font-size: .85rem; color: var(--fg); max-width: 40ch; }
+.gauge .cap { display: block; font-size: .85rem; color: var(--fg); max-width: 40ch; margin-top: .5rem; }
 .gauge .cap b { display: block; color: var(--ph); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; font-size: .8rem; margin-bottom: .2rem; }
 .js .gauge { opacity: 0; animation: print .01s both; animation-delay: calc(2.2s + var(--n) * .25s); }
 
@@ -204,16 +217,19 @@ h1 .name::before { content: "USER "; color: var(--ph-40); }
 .ls { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--ph-15); }
 .ls-head { color: var(--ph-70); font-size: .95rem; margin-bottom: .5rem; }
 .files { display: grid; gap: .25rem; }
-.file { display: grid; grid-template-columns: 9.5ch 6ch 1fr; gap: 1ch; align-items: baseline; padding: .35rem .5rem; margin: 0; color: var(--fg); text-decoration: none; white-space: nowrap; }
+.file { display: grid; grid-template-columns: 9.5ch 6ch minmax(0,1fr); gap: 1ch; align-items: baseline; padding: .55rem .5rem; margin: 0; color: var(--fg); text-decoration: none; white-space: nowrap; min-height: 2.5rem; }
+.file .fn { min-width: 0; overflow-wrap: anywhere; white-space: normal; }
 .file .perm { color: var(--ph-70); font-size: .9rem; }
 .file .size { color: var(--ph-70); text-align: right; font-size: .9rem; }
 .file .fn { color: var(--ph); text-decoration: underline; text-decoration-color: var(--ph-40); text-underline-offset: .2em; }
 .file .fn small { color: var(--ph-70); text-decoration: none; margin-left: 1ch; font-size: .85rem; }
 .file:hover, .file:focus-visible { background: var(--ph); color: var(--crt); outline: none; }
 .file:hover * , .file:focus-visible * { color: var(--crt) !important; text-decoration-color: var(--crt); }
-@media (max-width: 30rem) { .file { grid-template-columns: 5ch 1fr; gap: 0 1ch; white-space: normal; } .file .perm { display: none; } .file .fn small { display: block; margin-left: 0; } }
+@media (max-width: 30rem) { .file { grid-template-columns: 5ch minmax(0,1fr); gap: 0 1ch; white-space: normal; } .file .perm { display: none; } .file .fn small { display: block; margin-left: 0; } }
 .wires { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-top: 1.5rem; font-size: .95rem; }
-.wires a { display: inline-flex; align-items: center; gap: .5rem; }
+.wires a { display: inline-flex; align-items: center; gap: .5rem; min-height: 2rem; padding: .2rem 0; }
+.logout a, .man p a, .form-note a, .hdrs a, .frame-note a, .hero-copy p a, .wires a, #contact > .wrap p a, .section-note a { display: inline-block; padding: .3rem 0; margin: -.3rem 0; line-height: 1.5; min-height: 24px; }
+.wires a { display: inline-flex; }
 .ic { width: 1.05em; height: 1.05em; flex: none; }
 
 /* ---- proof: README + uptime ---- */
@@ -265,7 +281,7 @@ h1 .name::before { content: "USER "; color: var(--ph-40); }
 @media (min-width: 60rem) { .cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
 .man .sh { color: var(--amber); font-weight: 600; margin-top: 1.25rem; letter-spacing: .06em; }
 .man .sh:first-child { margin-top: 0; }
-.man p, .man pre { padding-left: 4ch; margin-top: .35rem; max-width: 62ch; }
+.man p, .man pre { padding-left: 4ch; margin-top: .35rem; max-width: 62ch; overflow-wrap: anywhere; }
 .man pre { white-space: pre-wrap; overflow-wrap: anywhere; color: var(--ph); text-shadow: var(--glow); }
 .man .manhead { display: flex; flex-wrap: wrap; gap: 0 1ch; justify-content: space-between; color: var(--ph-70); font-size: .9rem; margin-bottom: 1.25rem; }
 .finger div { display: grid; grid-template-columns: 11ch 1fr; gap: 1ch; padding: .3rem 0; }
@@ -315,7 +331,7 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js .tube, .js .fb, .js .cur, .tube::after { animation: none !important; }
-  .js .out > *, .js .display .w, .js .subline, .js .frame-note, .js .gauge, .js .quote { opacity: 1 !important; animation: none !important; clip-path: none !important; }
+  .js .out > *, .js .display .w, .js .subline, .js .dl, .js .frame-note, .js .gauge, .js .quote { opacity: 1 !important; animation: none !important; clip-path: none !important; }
   .js .cmd .typed { visibility: visible !important; }
   .js .cmd .cur { display: none; }
 }
@@ -328,28 +344,25 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
 
 <nav class="status" aria-label="Sections">
   <a class="win-home" href="#top">[pat@patpadgett]</a>
-  <ul><li><a href="#proof" data-target="proof"><b>1</b>README</a></li><li><a href="#record" data-target="record"><b>2</b>last</a></li><li><a href="#skills" data-target="skills"><b>3</b>bin</a></li><li><a href="#vouched" data-target="vouched"><b>4</b>wall</a></li><li><a href="#more" data-target="more"><b>5</b>man</a></li><li><a href="#contact" data-target="contact"><b>6</b>mail</a></li></ul>
+  <ul><li><a href="#proof" data-target="proof"><b>1</b>About</a></li><li><a href="#record" data-target="record"><b>2</b>Experience</a></li><li><a href="#skills" data-target="skills"><b>3</b>Skills</a></li><li><a href="#vouched" data-target="vouched"><b>4</b>Recommendations</a></li><li><a href="#more" data-target="more"><b>5</b>Corkscrew</a></li><li><a href="#contact" data-target="contact"><b>6</b>Contact</a></li></ul>
   <span class="clock" aria-hidden="true"></span>
-  <a class="win-dl" href="assets/Patrick_Padgett_Resume.pdf" download>resume.pdf</a>
+  <a class="win-dl" href="assets/Patrick_Padgett_Resume.pdf" download>Résumé PDF</a>
 </nav>
 <main>
 
 <header class="login" id="top" data-run>
  <div class="wrap">
-  <pre class="banner" aria-label="Login banner">patpadgett.com (ttyS0)
-
-<b>login:</b> guest
-<b>Last login:</b> from a recruiter, probably
-<span class="motd">Linux since 1996. Solaris, HP-UX and AIX before that were someone else's problem, but I fixed them anyway.</span>
-<b>uptime:</b> <span data-uptime>29 years</span>, load average: 0.02, 0.05, 0.00</pre>
+  <pre class="banner" aria-label="Login banner">patpadgett.com (ttyS0) · <b>uptime:</b> <span data-uptime>29 years</span> of production Linux.
+<span class="motd">Solaris, HP-UX and AIX before that were someone else's problem, but I fixed them anyway.</span></pre>
   <span class="cmd" aria-hidden="true"><span class="ps1"><b>pat@patpadgett</b>:~$ </span><span class="typed" data-text="finger pat">finger pat</span><span class="cur"></span></span>
   <div class="hero out">
     <div class="hero-copy">
       <h1>
         <span class="name">Patrick Padgett</span>
-        <span class="display" aria-label="Telecom Billing Mediation Engineer"><span class="w" style="--n:0">Telecom</span><span class="w" style="--n:1">Billing</span><span class="w" style="--n:2">Mediation</span><span class="w" style="--n:3">Engineer</span></span>
+        <span class="display" aria-label="Telecom billing mediation engineer"><span class="w" style="--n:0">Telecom</span><span class="w" style="--n:1">Billing</span><span class="w" style="--n:2">Mediation</span><span class="w" style="--n:3">Engineer</span></span>
       </h1>
-      <p class="subline">DevOps and Infrastructure Automation. <span class="nowrap">Greater Tampa Bay, FL.</span> Open to remote or hybrid.</p>
+      <p class="subline">Fourteen years as Sprint's Tier-3 SME for wireless and wireline billing mediation — Nortel, Ericsson and Lucent switch AMA/CDR — then Kubernetes at Jabil and Jenkins at Raymond James. <span class="nowrap">Greater Tampa Bay, FL.</span> Open to remote, hybrid or contract.</p>
+      <p class="dl" aria-label="Download résumé"><a class="btn btn-dl" href="assets/Patrick_Padgett_Resume.pdf" download><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3v12M6 9l6 6 6-6M4 21h16"/></svg><span>Download résumé (PDF)</span></a><a class="dl-alt" href="assets/Patrick_Padgett_Resume.docx" download>Word</a><a class="dl-alt" href="assets/Patrick_Padgett_Resume.md" download>Markdown</a></p>
       <p class="frame-note">Rendered as a terminal because that is where the work has always happened: a shell on a box that pays the bills, since the ISP days of <a href="#more">1996</a>.</p>
     </div>
     <figure class="fb">
@@ -359,15 +372,12 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
     <ol class="gauges" aria-label="Headline results at Sprint, 2001 to 2015">
       <li class="gauge" style="--n:0">
   <span class="num">$2M</span>
-  <span class="bar" data-pct="100" data-width="22" aria-hidden="true"><span class="fill">[</span><span class="rest">......................] 0%</span></span>
   <span class="cap"><b>saved</b> EDR routing application distributing usage records to downstream billing systems</span>
 </li><li class="gauge" style="--n:1">
   <span class="num">+250%</span>
-  <span class="bar" data-pct="100" data-width="22" aria-hidden="true"><span class="fill">[</span><span class="rest">......................] 0%</span></span>
   <span class="cap"><b>throughput</b> mediation records distributed across parallel processors</span>
 </li><li class="gauge" style="--n:2">
   <span class="num">−50%</span>
-  <span class="bar" data-pct="50" data-width="22" aria-hidden="true"><span class="fill">[</span><span class="rest">......................] 0%</span></span>
   <span class="cap"><b>alarm time-to-resolution</b> alerting and observability on the ELK stack</span>
 </li>
     </ol>
@@ -380,8 +390,8 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
       <ul class="wires">
         <li><a href="mailto:pat@patpadgett.com"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="M3 6l9 7 9-7"/></svg>pat@patpadgett.com</a></li>
         <li><a href="tel:+18166015983"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>+1 816-601-5983</a></li>
-        <li><a href="https://linkedin.com/in/patpadgett" rel="me"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><path d="M8 10v7M8 7v.5M12 17v-4a2.5 2.5 0 0 1 5 0v4M12 10v7"/></svg>linkedin.com/in/patpadgett</a></li>
-        <li><a href="https://github.com/patpadgett" rel="me"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3a9 9 0 0 0-2.85 17.54c.45.08.6-.2.6-.43v-1.6c-2.5.54-3.03-1.06-3.03-1.06-.4-1.04-1-1.32-1-1.32-.82-.56.06-.55.06-.55.9.06 1.38.93 1.38.93.8 1.38 2.1.98 2.62.75.08-.58.31-.98.57-1.2-2-.23-4.1-1-4.1-4.45 0-.98.35-1.79.93-2.42-.1-.23-.4-1.15.09-2.4 0 0 .75-.24 2.47.92a8.6 8.6 0 0 1 4.5 0c1.72-1.16 2.47-.92 2.47-.92.49 1.25.18 2.17.09 2.4.58.63.93 1.44.93 2.42 0 3.46-2.1 4.22-4.11 4.44.32.28.61.83.61 1.67v2.48c0 .24.15.52.61.43A9 9 0 0 0 12 3z"/></svg>github.com/patpadgett</a></li>
+        <li><a href="https://linkedin.com/in/patpadgett" rel="me noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><path d="M8 10v7M8 7v.5M12 17v-4a2.5 2.5 0 0 1 5 0v4M12 10v7"/></svg>linkedin.com/in/patpadgett</a></li>
+        <li><a href="https://github.com/patpadgett" rel="me noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3a9 9 0 0 0-2.85 17.54c.45.08.6-.2.6-.43v-1.6c-2.5.54-3.03-1.06-3.03-1.06-.4-1.04-1-1.32-1-1.32-.82-.56.06-.55.06-.55.9.06 1.38.93 1.38.93.8 1.38 2.1.98 2.62.75.08-.58.31-.98.57-1.2-2-.23-4.1-1-4.1-4.45 0-.98.35-1.79.93-2.42-.1-.23-.4-1.15.09-2.4 0 0 .75-.24 2.47.92a8.6 8.6 0 0 1 4.5 0c1.72-1.16 2.47-.92 2.47-.92.49 1.25.18 2.17.09 2.4.58.63.93 1.44.93 2.42 0 3.46-2.1 4.22-4.11 4.44.32.28.61.83.61 1.67v2.48c0 .24.15.52.61.43A9 9 0 0 0 12 3z"/></svg>github.com/patpadgett</a></li>
       </ul>
     </div>
   </div>
@@ -392,7 +402,7 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
   <div class="wrap">
     <span class="cmd" aria-hidden="true"><span class="ps1"><b>pat@patpadgett</b>:~$ </span><span class="typed" data-text="cat README; uptime">cat README; uptime</span><span class="cur"></span></span>
     <div class="out">
-      <h2 id="h-proof">README</h2>
+      <h2 id="h-proof">About</h2>
       <div class="proof-grid">
         <p class="lede">Telecom billing mediation and revenue assurance engineer with 14 years as highest-tier SME for Sprint&#x27;s wireless and wireline mediation platforms (Nortel, Ericsson and Lucent switch AMA/CDR data), followed by senior infrastructure automation roles at Jabil and Raymond James. Builds and operates CDR/EDR usage pipelines that are faster, observable and repeatable: Linux, Ansible, Docker, Kubernetes, Terraform, CI/CD, ELK. 25 years of production Linux.</p>
         <dl class="uptime" aria-label="Tenure">
@@ -410,7 +420,7 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
   <div class="wrap">
     <span class="cmd" aria-hidden="true"><span class="ps1"><b>pat@patpadgett</b>:~$ </span><span class="typed" data-text="last -x pat | sort -r">last -x pat | sort -r</span><span class="cur"></span></span>
     <div class="out">
-      <h2 id="h-record">last</h2>
+      <h2 id="h-record">Experience</h2>
       <p class="section-note">Fourteen years as highest-tier SME for Sprint's billing mediation, then infrastructure automation at Jabil and Raymond James. Same text as the PDF; nothing embellished for the web.</p>
       <div class="jobs">
       <article class="job" id="job-0">
@@ -470,7 +480,7 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
   <div class="wrap">
     <span class="cmd" aria-hidden="true"><span class="ps1"><b>pat@patpadgett</b>:~$ </span><span class="typed" data-text="ls -l /usr/local/bin/">ls -l /usr/local/bin/</span><span class="cur"></span></span>
     <div class="out">
-      <h2 id="h-skills">/usr/local/bin</h2>
+      <h2 id="h-skills">Skills</h2>
       <dl class="skills"><div class="skill-row"><span class="perm">drwxr-xr-x</span><dt>Telecom billing</dt><dd>billing mediation, revenue assurance, CDR/EDR/AMA usage records, ETL data pipelines, Nortel/Ericsson/Lucent switch data, rating, order-to-cash, BSS/OSS</dd></div><div class="skill-row"><span class="perm">drwxr-xr-x</span><dt>Automation and IaC</dt><dd>Ansible, Terraform, CloudFormation, Docker, Kubernetes, GitLab CI, Azure DevOps, GitHub Actions, Jenkins, AWS CodePipeline</dd></div><div class="skill-row"><span class="perm">drwxr-xr-x</span><dt>Observability</dt><dd>ELK (Elasticsearch, Logstash, Kibana), Splunk, Dynatrace, Prometheus</dd></div><div class="skill-row"><span class="perm">drwxr-xr-x</span><dt>Platforms</dt><dd>Linux (RHEL, CentOS, Debian, Ubuntu), Solaris, AWS, Azure, GCP, OpenStack, SAN storage</dd></div><div class="skill-row"><span class="perm">drwxr-xr-x</span><dt>Programming</dt><dd>Perl, Python, PHP, Ruby on Rails, JavaScript, Bash, PowerShell, C/C++, Oracle SQL</dd></div><div class="skill-row"><span class="perm">drwxr-xr-x</span><dt>Networking</dt><dd>TCP/IP, IPv4/IPv6, routing and firewalls, packet analysis (libpcap, sockets), SIP/Asterisk</dd></div><div class="skill-row"><span class="perm">drwxr-xr-x</span><dt>Practices</dt><dd>production support, incident response, root cause analysis, on-call, CI/CD, infrastructure as code, technical documentation, Agile</dd></div></dl>
     </div>
   </div>
@@ -480,7 +490,7 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
   <div class="wrap">
     <span class="cmd" aria-hidden="true"><span class="ps1"><b>pat@patpadgett</b>:~$ </span><span class="typed" data-text="wall &lt; /var/mail/pat">wall &lt; /var/mail/pat</span><span class="cur"></span></span>
     <div class="out">
-      <h2 id="h-vouched">wall</h2>
+      <h2 id="h-vouched">Recommendations</h2>
       <p class="section-note">Verbatim. The first two are from Sprint leadership; the last is a Linux Magazine review of corkscrew.</p>
       <div class="quotes">
       <figure class="quote" style="--n:0">
@@ -512,19 +522,19 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
     <div class="man">
       <span class="cmd" aria-hidden="true"><span class="ps1"><b>pat@patpadgett</b>:~$ </span><span class="typed" data-text="man corkscrew">man corkscrew</span><span class="cur"></span></span>
       <p class="manhead"><span>CORKSCREW(1)</span><span>User Commands</span><span>CORKSCREW(1)</span></p>
-      <h2 id="h-more">corkscrew</h2>
+      <h2 id="h-more">Corkscrew</h2>
       <p class="sh">NAME</p>
       <p>corkscrew - tunnel OpenSSH through HTTP and HTTPS proxies</p>
       <p class="sh">SYNOPSIS</p>
       <pre aria-label="corkscrew usage line">ProxyCommand corkscrew proxy.example.com 8080 %h %p</pre>
       <p class="sh">DESCRIPTION</p>
-      <p>C program that tunnels OpenSSH through HTTP and HTTPS proxies. Packaged in Debian, Ubuntu, Red Hat, CentOS and FreeBSD; reviewed in Linux Magazine and 2600: The Hacker&rsquo;s Quarterly (Vol. 19, Issue&nbsp;2, Summer 2002); has its own <a href="https://en.wikipedia.org/wiki/Corkscrew_(program)">Wikipedia article</a>. Maintained 2000 to present.</p>
+      <p>C program that tunnels OpenSSH through HTTP and HTTPS proxies. Packaged in Debian, Ubuntu, Red Hat, CentOS and FreeBSD; reviewed in Linux Magazine and 2600: The Hacker&rsquo;s Quarterly (Vol. 19, Issue&nbsp;2, Summer 2002); has its own <a href="https://en.wikipedia.org/wiki/Corkscrew_(program)" rel="noopener">Wikipedia article</a>. Maintained 2000 to present.</p>
       <p class="sh">SEE ALSO</p>
-      <p><a href="https://github.com/patpadgett/corkscrew"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3a9 9 0 0 0-2.85 17.54c.45.08.6-.2.6-.43v-1.6c-2.5.54-3.03-1.06-3.03-1.06-.4-1.04-1-1.32-1-1.32-.82-.56.06-.55.06-.55.9.06 1.38.93 1.38.93.8 1.38 2.1.98 2.62.75.08-.58.31-.98.57-1.2-2-.23-4.1-1-4.1-4.45 0-.98.35-1.79.93-2.42-.1-.23-.4-1.15.09-2.4 0 0 .75-.24 2.47.92a8.6 8.6 0 0 1 4.5 0c1.72-1.16 2.47-.92 2.47-.92.49 1.25.18 2.17.09 2.4.58.63.93 1.44.93 2.42 0 3.46-2.1 4.22-4.11 4.44.32.28.61.83.61 1.67v2.48c0 .24.15.52.61.43A9 9 0 0 0 12 3z"/></svg> github.com/patpadgett/corkscrew</a> &middot; <a href="https://en.wikipedia.org/wiki/Corkscrew_(program)">Corkscrew (program) on Wikipedia</a></p>
+      <p><a href="https://github.com/patpadgett/corkscrew" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3a9 9 0 0 0-2.85 17.54c.45.08.6-.2.6-.43v-1.6c-2.5.54-3.03-1.06-3.03-1.06-.4-1.04-1-1.32-1-1.32-.82-.56.06-.55.06-.55.9.06 1.38.93 1.38.93.8 1.38 2.1.98 2.62.75.08-.58.31-.98.57-1.2-2-.23-4.1-1-4.1-4.45 0-.98.35-1.79.93-2.42-.1-.23-.4-1.15.09-2.4 0 0 .75-.24 2.47.92a8.6 8.6 0 0 1 4.5 0c1.72-1.16 2.47-.92 2.47-.92.49 1.25.18 2.17.09 2.4.58.63.93 1.44.93 2.42 0 3.46-2.1 4.22-4.11 4.44.32.28.61.83.61 1.67v2.48c0 .24.15.52.61.43A9 9 0 0 0 12 3z"/></svg> github.com/patpadgett/corkscrew</a> &middot; <a href="https://en.wikipedia.org/wiki/Corkscrew_(program)" rel="noopener">Corkscrew (program) on Wikipedia</a></p>
     </div>
     <div class="finger">
       <span class="cmd" aria-hidden="true"><span class="ps1"><b>pat@patpadgett</b>:~$ </span><span class="typed" data-text="finger -l pat | tail">finger -l pat | tail</span><span class="cur"></span></span>
-      <h2>education</h2>
+      <h2>Education</h2>
       <dl>
         <div><dt>Cert</dt><dd>Certificate, Graphic Arts</dd></div>
         <div><dt>School</dt><dd>Lake Area Vocational Technical School, Camdenton,&nbsp;MO</dd></div>
@@ -541,9 +551,9 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
     <span class="cmd" aria-hidden="true"><span class="ps1"><b>pat@patpadgett</b>:~$ </span><span class="typed" data-text="mail -s &#x27;job&#x27; pat@patpadgett.com">mail -s &#x27;job&#x27; pat@patpadgett.com</span><span class="cur"></span></span>
     <div class="cols out">
       <div>
-        <h2 id="h-contact">mail</h2>
+        <h2 id="h-contact">Contact</h2>
         <p class="section-note">Telecom billing mediation, revenue assurance, or infrastructure automation. Remote, hybrid, contract, or full-time. Tampa Bay based.</p>
-        <p><a href="mailto:pat@patpadgett.com"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="M3 6l9 7 9-7"/></svg> pat@patpadgett.com</a><br><a href="tel:+181****5983"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg> +1 816-601-5983</a></p>
+        <p><a href="mailto:pat@patpadgett.com"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="M3 6l9 7 9-7"/></svg> pat@patpadgett.com</a><br><a href="tel:+18166015983"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg> +1 816-601-5983</a></p>
         <p class="ls-head" style="margin-top:1.5rem">Or grab the file and skip the form:</p>
         <div class="files">
           <a class="file" href="assets/Patrick_Padgett_Resume.pdf" download><span class="perm">-rw-r--r--</span><span class="size">42K</span><span class="fn">Patrick_Padgett_Resume.pdf</span></a>
@@ -551,14 +561,14 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
           <a class="file" href="assets/Patrick_Padgett_Resume.md" download><span class="perm">-rw-r--r--</span><span class="size">6K</span><span class="fn">Patrick_Padgett_Resume.md</span></a>
         </div>
       </div>
-      <form class="mail" method="post" action="#" novalidate>
+      <form class="mail" method="post" action="#" novalidate aria-describedby="form-note">
         <div class="hdrs"><span><b>To:</b> pat@patpadgett.com</span><span><b>Subject:</b> job</span></div>
-        <p class="form-note">Form is not wired yet. Until it is, email <a href="mailto:pat@patpadgett.com">pat@patpadgett.com</a> directly.</p>
-        <label>From (name)<input type="text" name="name" autocomplete="name" required><span class="err">Add your name so the reply has a greeting.</span></label>
-        <label>Reply-To<input type="email" name="email" autocomplete="email" required><span class="err">A working email address, so the reply can reach you.</span></label>
-        <label>Role or company<input type="text" name="role" autocomplete="organization"></label>
-        <label>Body<textarea name="message" rows="5" required></textarea><span class="err">A line or two about the role is enough.</span></label>
-        <button type="submit" class="btn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Send  ^D</span></button>
+        <p class="form-note" id="form-note">Fill this in and it opens a ready-to-send draft in your mail app — or just email <a href="mailto:pat@patpadgett.com">pat@patpadgett.com</a>.</p>
+        <label for="f-name">From (name)</label><input id="f-name" type="text" name="name" autocomplete="name" required aria-describedby="e-name"><span class="err" id="e-name">Add your name so the reply has a greeting.</span>
+        <label for="f-email">Reply-To</label><input id="f-email" type="email" name="email" autocomplete="email" required aria-describedby="e-email"><span class="err" id="e-email">A working email address, so the reply can reach you.</span>
+        <label for="f-role">Role or company</label><input id="f-role" type="text" name="role" autocomplete="organization">
+        <label for="f-msg">Body</label><textarea id="f-msg" name="message" rows="5" required aria-describedby="e-msg"></textarea><span class="err" id="e-msg">A line or two about the role is enough.</span>
+        <button type="submit" class="btn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Compose email</span></button>
       </form>
     </div>
   </div>
@@ -569,7 +579,7 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
   <div class="wrap">
     <span class="cmd" aria-hidden="true"><span class="ps1"><b>pat@patpadgett</b>:~$ </span><span class="typed" data-text="logout">logout</span><span class="cur"></span></span>
     <p>Set in VT323 and IBM Plex Mono. Generated from the same source as the résumé files, so the three formats and this page always agree. Type <kbd>amber</kbd> for the other monitor.</p>
-    <p>&copy; 2026 Patrick Padgett &middot; <a href="https://patpadgett.com">patpadgett.com</a> &middot; <a href="https://music.patpadgett.com">music</a> &middot; <a href="https://blog.patpadgett.com">blog</a> &middot; Connection to patpadgett.com closed.</p>
+    <p>&copy; 2026 Patrick Padgett &middot; <a href="https://patpadgett.com" rel="noopener">patpadgett.com</a> &middot; <a href="https://music.patpadgett.com" rel="noopener">music</a> &middot; <a href="https://blog.patpadgett.com" rel="noopener">blog</a> &middot; Connection to patpadgett.com closed.</p>
   </div>
 </footer>
 </div>
@@ -719,7 +729,7 @@ html.amber .tube::after { background: linear-gradient(180deg, transparent, rgba(
     if (form.getAttribute('action') === '#') {
       ev.preventDefault();
       var note = form.querySelector('.form-note');
-      note.textContent = 'sendmail: not configured on this host. Handing off to your mail client.';
+      note.textContent = 'Opening a draft in your mail app. If nothing happens, email pat@patpadgett.com — your text is still here.';
       var d = new FormData(form);
       var body = 'From: ' + d.get('name') + ' <' + d.get('email') + '>\nRole/company: ' + d.get('role') + '\n\n' + d.get('message');
       window.location.href = 'mailto:pat@patpadgett.com?subject=' + encodeURIComponent('[patpadgett.com] ' + (d.get('role') || 'hello from ' + d.get('name'))) + '&body=' + encodeURIComponent(body);

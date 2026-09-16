@@ -1,101 +1,268 @@
 {
-  "schemaVersion": 2,
-  "generatedAt": "2026-09-07T04:30:00Z",
-  "title": "Design System: patpadgett.com — The Press Sheet",
-  "extensions": {
-    "colorMeta": {
-      "process-cyan": {"role": "primary", "displayName": "Process Cyan", "canonical": "#0099d8", "tonalRamp": ["#00293c", "#004566", "#006a9a", "#0099d8", "#33b3e6", "#66c8ee", "#a3dff5", "#dff3fb"]},
-      "process-magenta": {"role": "primary", "displayName": "Process Magenta", "canonical": "#ec008c", "tonalRamp": ["#3d0024", "#6b003f", "#a3005f", "#c4006f", "#ec008c", "#f24da8", "#f894c8", "#fde0ef"]},
-      "process-yellow": {"role": "primary", "displayName": "Process Yellow", "canonical": "#fff100", "tonalRamp": ["#4a4600", "#7d7600", "#b3a900", "#e0d400", "#fff100", "#fff54d", "#fff98c", "#fffdd6"]},
-      "key-black": {"role": "neutral", "displayName": "Key Black", "canonical": "#111111", "tonalRamp": ["#111111", "#2b2b2b", "#4d4d4d", "#6f6f6f", "#9a9a9a", "#c4c4c4", "#e9e9e9", "#ffffff"]}
-    },
-    "typographyMeta": {
-      "display": {"displayName": "Display", "purpose": "Hero words, one per line, one ink each."},
-      "headline": {"displayName": "Headline", "purpose": "Section h2 and registration-target numbers."},
-      "label": {"displayName": "Ticket Mono", "purpose": "Job ticket writing: captions, dates, formats, form labels."}
-    },
-    "shadows": [],
-    "motion": [
-      {"name": "press", "value": "320ms steps(4, end)", "purpose": "Clip-path wipe as elements register into place; the only entrance."},
-      {"name": "misregister", "value": "320ms steps(3, end)", "purpose": "Stamp hover: cyan and magenta plates slip out of register."}
-    ],
-    "breakpoints": [
-      {"name": "phone", "value": "560px"},
-      {"name": "tablet-narrow", "value": "720px"},
-      {"name": "hero-stack", "value": "900px"}
+ "schemaVersion": 2,
+ "generatedAt": "2026-09-16T01:17:48Z",
+ "title": "Design System: work.patpadgett.com \u2014 The Session",
+ "extensions": {
+  "colorMeta": {
+   "crt": {
+    "role": "neutral",
+    "displayName": "Cathode ground",
+    "canonical": "#060907",
+    "tonalRamp": [
+     "#020202",
+     "#030404",
+     "#040705",
+     "#060907",
+     "#444645",
+     "#828483",
+     "#c1c2c1",
+     "#e6e6e6"
     ]
+   },
+   "crt-2": {
+    "role": "neutral",
+    "displayName": "Inset panel",
+    "canonical": "#0a0f0b",
+    "tonalRamp": [
+     "#020403",
+     "#050806",
+     "#080b08",
+     "#0a0f0b",
+     "#474b48",
+     "#848785",
+     "#c2c3c2",
+     "#e6e7e7"
+    ]
+   },
+   "phosphor": {
+    "role": "primary",
+    "displayName": "P1 Phosphor",
+    "canonical": "#3dff73",
+    "tonalRamp": [
+     "#0f401d",
+     "#1e803a",
+     "#2ebf56",
+     "#3dff73",
+     "#6eff96",
+     "#9effb9",
+     "#ceffdc",
+     "#ecfff1"
+    ]
+   },
+   "phosphor-70": {
+    "role": "primary",
+    "displayName": "Phosphor 70",
+    "canonical": "#63e68b",
+    "tonalRamp": [
+     "#193a23",
+     "#327346",
+     "#4aac68",
+     "#63e68b",
+     "#8aeca8",
+     "#b1f2c5",
+     "#d8f9e2",
+     "#effcf3"
+    ]
+   },
+   "phosphor-40": {
+    "role": "primary",
+    "displayName": "Phosphor 40",
+    "canonical": "#22a04a",
+    "tonalRamp": [
+     "#082812",
+     "#115025",
+     "#1a7838",
+     "#22a04a",
+     "#59b877",
+     "#90d0a4",
+     "#c8e7d2",
+     "#e9f6ed"
+    ]
+   },
+   "phosphor-15": {
+    "role": "primary",
+    "displayName": "Phosphor 15",
+    "canonical": "#0c3a1a",
+    "tonalRamp": [
+     "#030e06",
+     "#061d0d",
+     "#092c14",
+     "#0c3a1a",
+     "#496b53",
+     "#869c8c",
+     "#c2cec6",
+     "#e7ebe8"
+    ]
+   },
+   "phosphor-06": {
+    "role": "primary",
+    "displayName": "Phosphor 06",
+    "canonical": "#0a1f10",
+    "tonalRamp": [
+     "#020804",
+     "#051008",
+     "#08170c",
+     "#0a1f10",
+     "#47574c",
+     "#848f88",
+     "#c2c7c3",
+     "#e6e9e7"
+    ]
+   },
+   "fg": {
+    "role": "neutral",
+    "displayName": "Green-white body",
+    "canonical": "#c9f7d3",
+    "tonalRamp": [
+     "#323e35",
+     "#647c6a",
+     "#97b99e",
+     "#c9f7d3",
+     "#d6f9de",
+     "#e4fbe9",
+     "#f2fdf4",
+     "#fafefb"
+    ]
+   },
+   "amber": {
+    "role": "accent",
+    "displayName": "P3 Amber",
+    "canonical": "#ffb000",
+    "tonalRamp": [
+     "#402c00",
+     "#805800",
+     "#bf8400",
+     "#ffb000",
+     "#ffc440",
+     "#ffd880",
+     "#ffebbf",
+     "#fff7e6"
+    ]
+   },
+   "amber-dim": {
+    "role": "accent",
+    "displayName": "Amber dim",
+    "canonical": "#a86f00",
+    "tonalRamp": [
+     "#2a1c00",
+     "#543800",
+     "#7e5300",
+     "#a86f00",
+     "#be9340",
+     "#d4b780",
+     "#e9dbbf",
+     "#f6f1e6"
+    ]
+   }
   },
-  "components": [
-    {
-      "name": "Stamp",
-      "kind": "button",
-      "refersTo": "stamp",
-      "description": "Job-ticket download stamp; plates misregister on hover.",
-      "html": "<a class=\"ds-stamp\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M6 2h8l5 5v15H6z\"/><path d=\"M14 2v5h5\"/></svg><span>PDF</span><small>ATS-safe, 2 pp.</small></a>",
-      "css": ".ds-stamp{position:relative;display:inline-grid;grid-template-columns:auto auto;grid-template-rows:auto auto;column-gap:.6rem;align-items:center;padding:.7rem 1rem .65rem .85rem;border:2px solid currentColor;text-decoration:none;font-family:'Azeret Mono',ui-monospace,monospace;text-transform:uppercase;letter-spacing:.06em;line-height:1;color:#111;background:transparent}.ds-stamp svg{grid-row:1/3;width:1.35rem;height:1.35rem}.ds-stamp span{font-size:1.05rem;font-weight:600}.ds-stamp small{font-size:.7rem;margin-top:.3rem;color:#4d4d4d;letter-spacing:.04em}.ds-stamp::before,.ds-stamp::after{content:'';position:absolute;inset:-2px;border:2px solid transparent;pointer-events:none;mix-blend-mode:multiply;transition:transform 320ms steps(3,end)}.ds-stamp:hover::before,.ds-stamp:focus-visible::before{border-color:#0099d8;transform:translate(-3px,-2px)}.ds-stamp:hover::after,.ds-stamp:focus-visible::after{border-color:#ec008c;transform:translate(3px,2px)}.ds-stamp:focus-visible{outline:3px solid #ec008c;outline-offset:3px}"
-    },
-    {
-      "name": "Submit stamp",
-      "kind": "button",
-      "refersTo": "stamp-primary",
-      "description": "Primary action on the K field: yellow stamp with arrow.",
-      "html": "<div style=\"background:#111;padding:24px\"><button class=\"ds-stamp-btn\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg><span>Start the conversation</span></button></div>",
-      "css": ".ds-stamp-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.25rem;border:2px solid #fff100;color:#fff100;background:transparent;font-family:'Azeret Mono',ui-monospace,monospace;font-size:.9rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}.ds-stamp-btn svg{width:1.1rem;height:1.1rem}.ds-stamp-btn:hover{background:#fff100;color:#111}.ds-stamp-btn:focus-visible{outline:3px solid #fff100;outline-offset:3px}"
-    },
-    {
-      "name": "Colorbar",
-      "kind": "nav",
-      "refersTo": "colorbar-cell",
-      "description": "CMYK color-control bar as section navigation.",
-      "html": "<nav class=\"ds-bar\"><a class=\"ds-cell ds-home\" href=\"#\"><span>PP</span></a><a class=\"ds-cell\" style=\"background:#0099d8\" href=\"#\"><span>Proof</span></a><a class=\"ds-cell ds-active\" style=\"background:#111;color:#fff\" href=\"#\"><span>Record</span></a><a class=\"ds-cell\" style=\"background:#fff100\" href=\"#\"><span>Inks</span></a><a class=\"ds-cell\" style=\"background:#ec008c\" href=\"#\"><span>Signed off</span></a><a class=\"ds-cell ds-dl\" href=\"#\"><span>PDF</span></a></nav>",
-      "css": ".ds-bar{display:flex;height:32px;background:#111;font-family:'Azeret Mono',ui-monospace,monospace;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase}.ds-cell{flex:1;display:flex;align-items:center;justify-content:center;position:relative;color:#111;text-decoration:none;border-right:1px solid #111}.ds-home{flex:0 0 32px;background:#fff;font-weight:600}.ds-dl{flex:0 0 4.5rem;background:#fff100;font-weight:600;border-left:2px solid #111;border-right:0}.ds-cell::after{content:'';position:absolute;left:0;right:0;bottom:0;height:0;background:#111}.ds-cell:hover::after,.ds-active::after{height:4px}.ds-active::after{background:#fff100}"
-    },
-    {
-      "name": "Ticket input",
-      "kind": "input",
-      "refersTo": "input",
-      "description": "Underline-only field on the K field with yellow focus and magenta error.",
-      "html": "<div style=\"background:#111;padding:24px\"><label class=\"ds-field\">Email<input type=\"email\" placeholder=\"\" required><span class=\"ds-err\">A working email address, so the reply can reach you.</span></label></div>",
-      "css": ".ds-field{display:grid;gap:.35rem;font-family:'Azeret Mono',ui-monospace,monospace;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:#fff}.ds-field input{font:400 1rem/1.4 'Public Sans',system-ui,sans-serif;color:#fff;background:transparent;caret-color:#fff100;border:0;border-bottom:2px solid #fff;padding:.55rem 0;border-radius:0}.ds-field input:focus-visible{outline:none;border-bottom-color:#fff100;box-shadow:0 2px 0 #fff100}.ds-field input:user-invalid{border-bottom-color:#ec008c;box-shadow:0 2px 0 #ec008c}.ds-err{display:none;font-family:'Public Sans',system-ui,sans-serif;font-size:.9rem;text-transform:none;letter-spacing:0;color:#ffd1e8}.ds-field input:user-invalid+.ds-err{display:block}"
-    },
-    {
-      "name": "Registration target",
-      "kind": "custom",
-      "refersTo": "",
-      "description": "Headline number as a press registration mark.",
-      "html": "<div class=\"ds-target\"><svg viewBox=\"0 0 100 100\" aria-hidden=\"true\"><circle cx=\"50\" cy=\"50\" r=\"46\" fill=\"none\" stroke=\"currentColor\"/><circle cx=\"50\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"currentColor\"/><path d=\"M50 0V100M0 50H100\" stroke=\"currentColor\"/><path d=\"M50 20A30 30 0 0 1 80 50H50Z M50 80A30 30 0 0 1 20 50H50Z\" fill=\"currentColor\"/></svg><span class=\"ds-num\">$2M</span><span class=\"ds-cap\"><b>saved</b> EDR routing application distributing usage records to downstream billing systems</span></div>",
-      "css": ".ds-target{display:grid;grid-template-columns:3.25rem 1fr;column-gap:1rem;align-items:start;padding-top:1.25rem;border-top:1px solid #111;color:#111}.ds-target svg{width:3.25rem;height:3.25rem;grid-row:1/3;color:#0099d8}.ds-num{font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:900;font-size:3.4rem;line-height:.95}.ds-cap{font:400 .9rem/1.35 'Public Sans',system-ui,sans-serif;color:#4d4d4d;margin-top:.45rem}.ds-cap b{display:block;color:#111;font-family:'Azeret Mono',ui-monospace,monospace;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em}"
-    }
+  "typographyMeta": {
+   "display": {
+    "displayName": "Display",
+    "purpose": "The four stacked role words, section h2s, metric numbers. VT323."
+   },
+   "name": {
+    "displayName": "Name",
+    "purpose": "The person, above the role."
+   },
+   "body": {
+    "displayName": "Body",
+    "purpose": "Everything read closely. IBM Plex Mono."
+   },
+   "label": {
+    "displayName": "Label",
+    "purpose": "Uppercase 600 captions, form labels, button text."
+   }
+  },
+  "shadows": [
+   {
+    "name": "glow",
+    "value": "0 0 .35em rgba(61,255,115,.45), 0 0 1.4em rgba(61,255,115,.18)",
+    "purpose": "Phosphor bloom on bright text and the filled button."
+   },
+   {
+    "name": "aglow",
+    "value": "0 0 .35em rgba(255,176,0,.45), 0 0 1.4em rgba(255,176,0,.18)",
+    "purpose": "Amber bloom."
+   }
   ],
-  "narrative": {
-    "northStar": "The Press Sheet",
-    "overview": "The site is a single sheet of bright white coated stock coming off an offset press, and every piece of print furniture does a job. The color-control bar across the top is the navigation. Crop marks frame the trim. Registration targets carry the headline numbers. Downloads are job-ticket stamps whose cyan and magenta plates slip out of register on hover. Whole sections print as solid process-ink fields rather than as accents on white, and every fact on the sheet stays K black or white so no claim competes with chrome.",
-    "keyCharacteristics": [
-      "Strictly CMYK plus white; no tints, gradients, or off-palette grays beyond the K ramp.",
-      "Condensed 900-weight caps for anything that must be read from across the room; mono for anything a pressman would write on the ticket.",
-      "Hairline rules (1px, 2px for section tops) are the only container language.",
-      "Motion is one press stroke: a stepped clip-path wipe, never a fade."
-    ],
-    "rules": [
-      {"name": "The K-Only Facts Rule", "body": "Numbers, dates, claims, quotes and body copy print in Key Black or white. Color belongs to fields, marks, bars and headline words, never to a fact.", "section": "colors"},
-      {"name": "The No Yellow-on-White Rule", "body": "Process yellow never sits on the white stock. It prints on K, or K prints on it.", "section": "colors"},
-      {"name": "The One-Word Line Rule", "body": "Display type sets one word per line, each word one ink, leading 0.86. It never sets a sentence.", "section": "typography"},
-      {"name": "The Ticket Mono Rule", "body": "Mono is for what a pressman writes: job numbers, plate captions, dates, file formats, field labels. Never for body copy or emphasis.", "section": "typography"},
-      {"name": "The Flat Sheet Rule", "body": "Nothing casts a shadow, nothing blurs, nothing is glass. If it needs separation, rule it.", "section": "elevation"}
-    ],
-    "dos": [
-      "Do print sections as solid ink fields (cyan, yellow, magenta-solid, K) with white or K text; a new section picks the next ink in the CMYK sequence.",
-      "Do open every list or table with a 2px K rule and separate rows with 1px hairlines.",
-      "Do set every date range with an en dash and no-break spaces (2001–2015); keep the ASCII hyphen only in the résumé source files.",
-      "Do keep motion to the press stroke: steps() easing, clip-path wipe, visible default, gated behind prefers-reduced-motion: no-preference and the .js class.",
-      "Do self-host fonts from assets/fonts and keep the three-face system: one display, one body, one mono."
-    ],
-    "donts": [
-      "Don't put process yellow on the white stock or any gray tint between Key 70 and white for text.",
-      "Don't add cards, shadows, radii, gradients, glass, or icon tiles; the sheet is flat and ruled.",
-      "Don't set display type in more than one word per line or below 900 weight.",
-      "Don't use mono for body copy or emphasis; it is ticket writing only.",
-      "Don't introduce a color outside CMYK + white; a fifth ink is a new job."
-    ]
+  "motion": [
+   {
+    "name": "type",
+    "value": "steps(1) per character, ~28ms",
+    "purpose": "Command types on before its output prints."
+   },
+   {
+    "name": "print",
+    "value": ".01s opacity both, sequenced by --n",
+    "purpose": "Output appears as printed lines."
+   },
+   {
+    "name": "printfx",
+    "value": ".45s steps(8,end)",
+    "purpose": "Display words resolve in eight steps."
+   }
+  ],
+  "breakpoints": [
+   {
+    "name": "phone",
+    "value": "480px"
+   },
+   {
+    "name": "tablet",
+    "value": "768px"
+   },
+   {
+    "name": "hero-two-col",
+    "value": "960px"
+   }
+  ],
+  "surfaceNotes": [
+   "Scanlines (repeating-linear-gradient) and flicker are the monitor material \u2014 expected detector findings.",
+   "Hover inversion sets child text to the CRT colour; static child-vs-hover-ground contrast checks report false 1.0:1.",
+   "Sections open flush on a 1px rule by design (terminal output has no card inset)."
+  ]
+ },
+ "components": [
+  {
+   "name": "Download button",
+   "kind": "button",
+   "refersTo": "button",
+   "description": "Filled phosphor, CRT text, arrow icon; the only filled element in the hero.",
+   "html": "<a class=\"btn\" href=\"#\"><span>Download r\u00e9sum\u00e9 (PDF)</span></a>",
+   "css": ".btn{display:inline-flex;align-items:center;gap:.6rem;font:600 .9rem \"IBM Plex Mono\",monospace;text-transform:uppercase;letter-spacing:.08em;color:#060907;background:#3dff73;border:1px solid #3dff73;padding:.75rem 1.25rem;box-shadow:0 0 .35em rgba(61,255,115,.45)}.btn:hover{background:#ffb000;border-color:#ffb000}"
+  },
+  {
+   "name": "Status cell",
+   "kind": "nav",
+   "refersTo": "status-cell",
+   "description": "tmux-style bar cell; amber index, inverts on hover/current.",
+   "html": "<a class=\"status-a\" href=\"#\"><b>2</b>Experience</a>",
+   "css": ".status-a{display:flex;align-items:center;height:2.25rem;padding:0 .9rem;color:#3dff73;background:#0c3a1a;text-decoration:none;font:.9rem \"IBM Plex Mono\",monospace}.status-a b{color:#ffb000;margin-right:.35em}.status-a:hover{background:#3dff73;color:#060907}"
+  },
+  {
+   "name": "File row",
+   "kind": "link",
+   "refersTo": "file-row",
+   "description": "ls -lh output row; whole row is the download link.",
+   "html": "<a class=\"file\" href=\"#\"><span class=\"perm\">-rw-r--r--</span><span class=\"size\">42K</span><span class=\"fn\">Patrick_Padgett_Resume.pdf<small>ATS-safe, 2 pp.</small></span></a>",
+   "css": ".file{display:grid;grid-template-columns:9.5ch 6ch minmax(0,1fr);gap:1ch;padding:.55rem .5rem;min-height:2.5rem;color:#c9f7d3;text-decoration:none}.file .fn{color:#3dff73;text-decoration:underline;text-decoration-color:#22a04a;overflow-wrap:anywhere}.file:hover{background:#3dff73;color:#060907}"
+  },
+  {
+   "name": "Input",
+   "kind": "input",
+   "refersTo": "input",
+   "description": "Mail composer field; explicit label; amber rule when invalid.",
+   "html": "<label for=\"x\">Reply-To</label><input id=\"x\" type=\"email\">",
+   "css": "input{font:1rem \"IBM Plex Mono\",monospace;color:#c9f7d3;background:#060907;border:1px solid #0c3a1a;padding:.6rem .75rem}input:focus{outline:none;border-color:#3dff73;box-shadow:0 0 0 1px #3dff73}input:user-invalid{border-color:#ffb000}"
   }
+ ],
+ "narrative": {
+  "northStar": "The Session",
+  "overview": "A r\u00e9sum\u00e9 read off a green-phosphor terminal. The shell is the frame; the record is the content; every command on screen is a real one; every label a reader navigates by is plain English.",
+  "owner_decisions": [
+   "Keep the terminal (critique #1). The Press Sheet system was never shipped and is retired.",
+   "Proof-first hero: name, role, Sprint/Tampa sentence, PDF button in the first viewport at every width.",
+   "Form button says what it does (Compose email) until a POST endpoint exists."
+  ]
+ }
 }

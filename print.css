@@ -1,0 +1,22 @@
+/* work.patpadgett.com — print: the résumé as a document */
+.tube::before, .tube::after, .status, .skip, .cmd, .clock, .mail, .fb figcaption, .frame-note, .logout .cmd { display: none !important; }
+html, body, .tube, main, section, header, footer { background: #fff !important; color: #111 !important; text-shadow: none !important; box-shadow: none !important; animation: none !important; filter: none !important; }
+* { color: #111 !important; text-shadow: none !important; box-shadow: none !important; }
+.js .out > *, .js .display .w, .js .subline, .js .dl, .js .frame-note, .js .gauge, .js .quote, .out, .quote { opacity: 1 !important; animation: none !important; clip-path: none !important; visibility: visible !important; transform: none !important; }
+.wrap { max-width: none; padding: 0; }
+section, header { padding: 0 0 1.25rem; border: 0; page-break-inside: auto; }
+h2 { page-break-after: avoid; border-bottom: 1px solid #111; padding-bottom: .15rem; }
+.job, .quote, .gauge { page-break-inside: avoid; }
+.hero { grid-template-columns: 1fr 9rem; gap: 1rem; }
+.fb img { width: 9rem; height: 9rem; filter: none; }
+.gauges { grid-template-columns: repeat(3, 1fr); }
+.btn { border: 1px solid #111; background: #fff; }
+a { text-decoration: underline; }
+.wires a::after, .dl a::after, .man p a[href^="http"]::after, .logout a::after { content: " (" attr(href) ")"; font-size: .8em; }
+.wires a[href^="mailto:"]::after, .wires a[href^="tel:"]::after, .dl a::after { content: none; }
+.file .perm, .file .size { display: none; }
+.file { grid-template-columns: 1fr; }
+.fb img { filter: grayscale(1) contrast(1.1); }
+.banner { font-size: .8rem; margin-bottom: .5rem; }
+h1 .name { font-size: 1.4rem; font-weight: 700; text-transform: none; letter-spacing: 0; }
+h1 .name::before { content: none; }
