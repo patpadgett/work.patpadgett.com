@@ -230,7 +230,7 @@ The detector flattens `print.css` into the screen cascade, so it reports `#11111
 - Display is three lines (DEVOPS / & CLOUD / ENGINEER); the one-word-line rule holds with the ampersand joined to Cloud by a no-break space. 320: PDF row bottom 622, Word/Markdown bottom 658.
 - Gauges: ~112 plants on Kubernetes, −70% deployment time, 99.999% uptime for 14 years. Tenure list adds Cygwin (6 distributions).
 - Skills: ten rows mirroring the résumé's TECHNICAL SKILLS categories in the same order.
-- New section 4, Field notes (`#notes`): eleven blog posts about the work behind the bullets, linked to blog.patpadgett.com. Queued state described under Components.
+- New section 4, Field notes (`#notes`): eleven blog posts about the work behind the bullets, linked to blog.patpadgett.com. All eleven are live (the blog was back-dated 2026-01-30..2026-09-28 the same day); the queued state under Components stays available for any future row.
 - Nav: seven cells overflowed at 820–1024 with no cue; the `›` end-cap now renders at any width where JS measures overflow, cells tighten to .7rem padding below 78rem, and the clock waits for ≥78rem.
 - Print: notes print as title + URL, descriptions hidden; ten Letter pages.
 - Detector: 11 low-contrast findings are print.css `#111` flattened into the screen cascade (documented above); the `dark-glow` and `repeating-stripes` findings are the CRT material.

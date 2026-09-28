@@ -37,10 +37,12 @@ Telecom billing mediation remains in the Sprint record but is no longer the head
 - Recommendations: verbatim, from MASTER_RESUME.md "Recommendations and Press".
 - Field notes: eleven posts from /data/pat/websites/blog/posts chosen for DevOps/ops relevance
   (titles and one-line summaries from their frontmatter). Links point at
-  https://blog.patpadgett.com/posts/<slug>/. The blog publishes one post per scheduled date at
-  ~13:00 New York via cron; posts dated after this build are marked QUEUED on the page and become
-  links automatically (client-side date check) once their publish time passes. If a post's date
-  or slug changes in the blog source, update the row here.
+  https://blog.patpadgett.com/posts/<slug>/ and dates match the blog's (back-dated 2026-01-30..
+  2026-09-28 on 2026-09-28; see websites/blog/build/redate-2026-09-28.json). All eleven are live.
+  To add a row for a not-yet-published post, give the <li> class "note is-queued" and a
+  <span class="note-title" data-href="..."> instead of the <a>; inline JS turns it into a link at
+  13:00 New York on its date (the blog's publish hour). If a post's date or slug changes in the
+  blog source, update the row here.
 - The earlier generator (/data/pat/resume-ats/build_site.py, build_resume.py) no longer produces
   this page; do not run it over this repo.
 
@@ -96,9 +98,8 @@ Playwright (Chromium, --no-sandbox) at 1440×900, 820×1180, 390×844 and 320×7
 ## Before this goes live / known gaps
 
 - Contact form hands off to a mailto: draft; wire a POST endpoint and rename the button when one exists.
-- Field-notes rows for 2026-09-28 onward are QUEUED until the blog cron publishes them; the page
-  promotes them client-side, so no redeploy is needed, but a changed slug in the blog source would
-  need a matching edit here.
+- Field-notes dates are copied from the blog source; a re-dated or re-slugged post there needs a
+  matching edit here.
 - Hotjar snippet (6780883) is in the head of index.html and 404.html.
 
 ## Deploy
