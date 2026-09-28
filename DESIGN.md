@@ -113,7 +113,7 @@ components:
 
 **Creative North Star: "The Session"**
 
-The page is a logged-in shell on a green-phosphor monitor, and the résumé is what the shell prints. The visitor arrives on `patpadgett.com (ttyS0)`, a prompt types `finger pat`, and the answer is the person: name, role, one proof sentence, the résumé to download. Each section below is another command's output — `last` for the work record, `ls /usr/local/bin` for skills, `wall` for what colleagues wrote, `man corkscrew` for the open-source work, `mail` for contact. The commands are theatre; the labels the reader navigates by are not. Nav and headings say About, Experience, Skills, Recommendations, Corkscrew, Contact — plain English — and the typed command sits above each as flavour, `aria-hidden`.
+The page is a logged-in shell on a green-phosphor monitor, and the résumé is what the shell prints. The visitor arrives on `patpadgett.com (ttyS0)`, a prompt types `finger pat`, and the answer is the person: name, role, one proof sentence, the résumé to download. Each section below is another command's output — `last` for the work record, `ls /usr/local/bin` for skills, `tail ~/notes/ops.log` for the blog posts behind the bullets, `wall` for what colleagues wrote, `man corkscrew` for the open-source work, `mail` for contact. The commands are theatre; the labels the reader navigates by are not. Nav and headings say About, Experience, Skills, Field notes, Recommendations, Corkscrew, Contact — plain English — and the typed command sits above each as flavour, `aria-hidden`.
 
 Owner decision (critique #1): keep the terminal. The earlier "Press Sheet" system was never shipped and is retired; this document describes what is live.
 
@@ -122,7 +122,7 @@ Owner decision (critique #1): keep the terminal. The earlier "Press Sheet" syste
 - One display face (VT323) for what must be read from across the room — the four-word role, section titles, metrics. IBM Plex Mono for everything a person reads closely. Mono is the material here, not a costume: this is a terminal.
 - Depth is glow, not shadow: `--glow` / `--aglow` text-shadows on phosphor-bright text, a soft box glow on the one filled button. Nothing else lifts off the glass.
 - Motion is the machine working: a type-on for each command, an `opacity` "print" for the output it produces. One authored moment per section, sequenced, never a fade-up on everything. Fully gated behind `.js` and `prefers-reduced-motion`.
-- Proof first. The first viewport at every width carries: name (600, 1.35–1.75rem), role (display), the Sprint/Tampa proof sentence, and the filled **Download résumé (PDF)** button with Word / Markdown beside it. The login theatre is two lines, not six.
+- Proof first. The first viewport at every width carries: name (600, 1.35–1.75rem), role (display: DEVOPS / & CLOUD / ENGINEER), the Jabil/Sprint proof sentence, and the filled **Download résumé (PDF)** button with Word / Markdown beside it. The login theatre is two lines, not six.
 
 ## Colors
 
@@ -150,7 +150,7 @@ Owner decision (critique #1): keep the terminal. The earlier "Press Sheet" syste
 
 ## Layout
 
-Full-bleed CRT; content in a `100ch` column with gutter `clamp(1rem, 4vw, 3.5rem)`. A 2.25rem sticky status bar (tmux-style) holds `[pat@patpadgett]`, six section cells, a clock at ≥60rem, and the amber `Résumé PDF` cell. Under 48rem the home cell hides, the cells scroll horizontally with a sticky amber `›` end-cap over a gradient so the reader knows there's more; every visible label is a whole word.
+Full-bleed CRT; content in a `100ch` column with gutter `clamp(1rem, 4vw, 3.5rem)`. A 2.25rem sticky status bar (tmux-style) holds `[pat@patpadgett]`, seven section cells, a clock at ≥78rem, and the amber `Résumé PDF` cell. Wherever the cells overflow (measured by JS, typically <69rem) they scroll horizontally with a sticky amber `›` end-cap over a gradient so the reader knows there's more; every visible label is a whole word.
 
 Hero: single column to 60rem; above it a 1fr / 22rem grid with the framebuffer portrait and three metrics stacked in the right column. File rows (`ls -lh`) are a 9.5ch / 6ch / `minmax(0,1fr)` grid; under 30rem the permission column drops and filenames wrap by `overflow-wrap: anywhere`. Nothing on the page may exceed viewport width; `overflow-x: hidden` is not a fix.
 
@@ -168,6 +168,7 @@ Glow, not shadow. `--glow` on phosphor-bright text and the download button; `--a
 **File rows (`.file`)** — `-rw-r--r--  42K  Patrick_Padgett_Resume.pdf  ATS-safe, 2 pp.`; whole row is the link, ≥ 2.5rem tall; inverts on hover.
 **Metrics (`.gauge`)** — VT323 number in amber, 600 uppercase caption, one-line description. No bars: the number is the fact.
 **Job rows** — amber date column, 600 phosphor title with glow, Phosphor-70 org, `-` bulleted lines ≤ 78ch.
+**Note rows (`.note`)** — the `tail` output: 11ch amber ISO date, 600 phosphor title link (baseline-aligned with the date), one-line FG description ≤ 78ch, Phosphor-15 rule between rows, Phosphor-06 hover tint. A post dated after the build carries `.is-queued`: Phosphor-70 title, no link, a small amber `QUEUED` tag (400 weight, so it never outranks the 600 date); JS promotes it to a link once 13:00 America/New_York on its date has passed (the blog's publish hour).
 **Quotes** — recommendation text, attribution in label style.
 **Form (`.mail`)** — mail-header strip (`To:` / `Subject:`), explicit `<label for>` on every field, `aria-describedby` to each error sentence, `:user-invalid` amber rule, errors shown after a submit attempt. The button says **Compose email** because that is what it does: the handler builds a `mailto:` draft; the note says so before and after. When a POST endpoint exists, rename the button and drop the mailto.
 **Contact wires** — email, phone (`tel:+1` + 10 digits, never a masked string), LinkedIn, GitHub; icons are authored 24px SVG, one stroke weight; hit height ≥ 2rem.
@@ -223,3 +224,13 @@ The detector flattens `print.css` into the screen cascade, so it reports `#11111
 
 ## Critique #6 refinements
 - Mobile/tablet status bar is 44px (≤62rem) with `scroll-padding-top` 3.75rem; 320 stack tightened (display 2.85rem, header padding 1rem) so the PDF row still clears 700px (bottom 693).
+
+## Refocus on DevOps / Cloud (2026-09-28)
+- Owner decision: the page leads with DevOps and Cloud Engineer; telecom mediation stays as the Sprint record, not the headline. Résumé assets are now the DevOps build from career/resume/tailored/_base (PDF 47K, DOCX 40K, MD 7K).
+- Display is three lines (DEVOPS / & CLOUD / ENGINEER); the one-word-line rule holds with the ampersand joined to Cloud by a no-break space. 320: PDF row bottom 622, Word/Markdown bottom 658.
+- Gauges: ~112 plants on Kubernetes, −70% deployment time, 99.999% uptime for 14 years. Tenure list adds Cygwin (6 distributions).
+- Skills: ten rows mirroring the résumé's TECHNICAL SKILLS categories in the same order.
+- New section 4, Field notes (`#notes`): eleven blog posts about the work behind the bullets, linked to blog.patpadgett.com. Queued state described under Components.
+- Nav: seven cells overflowed at 820–1024 with no cue; the `›` end-cap now renders at any width where JS measures overflow, cells tighten to .7rem padding below 78rem, and the clock waits for ≥78rem.
+- Print: notes print as title + URL, descriptions hidden; ten Letter pages.
+- Detector: 11 low-contrast findings are print.css `#111` flattened into the screen cascade (documented above); the `dark-glow` and `repeating-stripes` findings are the CRT material.

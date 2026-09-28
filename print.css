@@ -47,3 +47,9 @@ h1 .name::before { content: none; }
 .quote::after { display: none !important; }
 .quote p::before, .quote p::after { color: #111 !important; }
 h2::before { color: #111 !important; }
+
+/* field notes on paper: title then its URL */
+.note { page-break-inside: avoid; }
+.note p { display: none; }
+.note a::after { content: " (" attr(href) ")"; font-size: .8em; }
+.note .note-title::after { content: " (queued)"; font-size: .8em; }

@@ -1,93 +1,63 @@
 # Patrick Padgett
+DevOps and Cloud Engineer | Kubernetes, Terraform, Ansible, CI/CD
++1 816-601-5983 | pat@patpadgett.com | Greater Tampa Bay, FL - open to remote or hybrid
+linkedin.com/in/patpadgett | github.com/patpadgett | patpadgett.com
 
-Telecom Billing Mediation Engineer | DevOps and Infrastructure Automation
+## PROFESSIONAL SUMMARY
+DevOps and Cloud Engineer with 20+ years of platform engineering - CI/CD pipelines, containerized applications, infrastructure as code, and production monitoring and observability on Linux with Ansible, Terraform, Docker, Kubernetes, Python and Bash across AWS, Azure and GCP. Containerized Jabil's iFactory platform onto Kubernetes across approx. 112 plants, automated Raymond James releases with Ansible and Jenkins, and ran Sprint's 50-server billing mediation estate at 99.999% uptime for 14 years as the on-call Tier 3 owner: 70% faster deployments, 60% fewer deployment errors, 50% lower alarm MTTR, $2M saved through custom routing software.
 
-pat@patpadgett.com | +1 816-601-5983 | Greater Tampa Bay, FL | Open to remote or hybrid | linkedin.com/in/patpadgett | github.com/patpadgett | patpadgett.com
+## TECHNICAL SKILLS
+IaC & configuration management: Terraform, Ansible (playbooks, roles, YAML, Jinja2), CloudFormation, Puppet, Chef, Salt
+CI/CD & version control: Azure DevOps, GitHub Actions, GitLab CI/CD, Jenkins, Octopus Deploy, AWS CodePipeline, Git, pull-request code review and branching/tagging strategy; canary / A-B / blue-green deployment
+Cloud: AWS (EC2, S3, RDS, VPC), Microsoft Azure (VMs, Storage, Virtual Networking, Azure DevOps), Google Cloud Platform, OpenStack, hybrid cloud, migration and cost optimization
+Containers & virtualization: Docker, Kubernetes, microservices and service mesh, HashiCorp Nomad and Consul, LXC, Podman, KVM, VMware ESX/vCenter/Horizon, VDI
+Monitoring & observability: ELK Stack (Elasticsearch, Logstash, Kibana), Splunk, Dynatrace, Prometheus, Grafana, centralized logging, alerting and dashboards, SLOs/SLIs, on-call incident response, postmortems and root cause analysis (RCA), SRE practices, ServiceNow/AIOps integration
+Unix / Linux / OS: RHEL, CentOS, Debian, Ubuntu, HP/UX, Solaris, FreeBSD, Red Hat Satellite, Windows Server, Active Directory / IAM
+Programming & scripting: Python, bash / korn / zsh, PowerShell, Perl, Ruby, PHP, SQL, C / C++ / C#, Java, JavaScript / TypeScript
+Databases: Oracle, MySQL, PostgreSQL, SQLite, Microsoft SQL Server
+Operations & ITSM: on-call and Tier 2/3 escalation, troubleshooting, SOPs and runbooks, release and change management, capacity planning, backup and disaster recovery, SLA adherence, ITIL, Agile / Scrum, Jira, Confluence
+Networking & security: IPv4/IPv6, routing, firewalls, load balancers and reverse proxies (nginx, Apache), Cisco IOS, Wireshark / libpcap, POSIX sockets, DNS, SSH, RADIUS, site-to-site VPN, VOIP / SIP / Asterisk, vulnerability scanning and patching
 
-## Professional Summary
+## PROFESSIONAL EXPERIENCE
+VIMOPS | Kansas City, MO (Remote)
+Founder & CEO / DevOps Engineer | May 2020 - Present
+- Cut client deployment times 70% by automating infrastructure with Ansible, Terraform, Docker and CI/CD (GitLab CI, GitHub Actions) across AWS, Azure and GCP, improving multi-cloud reliability.
+- Reduced build failures by over 50% by architecting scalable CI/CD pipelines in GitHub Actions and Jenkins.
+- Maintained 99.9% client application uptime with automated backup, disaster recovery and server provisioning workflows in Ansible and Docker.
+- Reduced deployment-related service disruptions 90% by refactoring a client's legacy monolith into containerized microservices.
+- Improved system reliability 80% by deploying and operating highly available Kubernetes clusters for client workloads.
+- Designed cloud migration strategy for 30+ clients, reducing infrastructure costs by an average of 75%.
 
-Telecom billing mediation and revenue assurance engineer with 14 years as highest-tier SME for Sprint's wireless and wireline mediation platforms (Nortel, Ericsson and Lucent switch AMA/CDR data), followed by senior infrastructure automation roles at Jabil and Raymond James. Builds and operates CDR/EDR usage pipelines that are faster, observable and repeatable: Linux, Ansible, Docker, Kubernetes, Terraform, CI/CD, ELK. 25 years of production Linux.
+JABIL | St. Petersburg, FL
+Senior Infrastructure Automation Engineer | Mar 2018 - May 2019
+- Reduced deployment time for critical iFactory infrastructure by 50% by building CI/CD build and release pipelines in Azure DevOps and Octopus Deploy with automated testing gates.
+- Cut deployment errors 60% with Terraform infrastructure as code and centralized ELK logging, making builds repeatable.
+- Cut new-developer onboarding time 30% by containerizing all iFactory applications with Docker - breaking siloed apps into microservices - and deploying them on Kubernetes across approx. 112 manufacturing plants.
+- Reduced manual configuration time 70% with a comprehensive Ansible playbook library for deploying, configuring and maintaining on-premises and cloud resources.
+- Drove DevOps adoption for iFactory across approx. 112 plants - canary, A/B and blue-green releases in Azure DevOps and Octopus Deploy, plus CI, automated testing, alerting and documentation standards replacing manual releases.
 
-- Saved $2M with an EDR routing application distributing usage records to downstream billing systems.
-- Raised mediation processing throughput 250% by distributing records across parallel processors.
-- Cut alarm time-to-resolution 50% by building alerting and observability on the ELK stack.
+RAYMOND JAMES | St. Petersburg, FL
+System Administrator (Contract), Capital Markets | Feb 2017 - May 2017
+- Cut release deployment times 50% with Ansible playbooks and Jenkins pipelines that automate releases across test and production environments with consistent configuration.
+- Anchored Linux SME and tier-3 application administration for the Capital Markets team's GBST Syn back-office trade-processing suite in a highly regulated financial environment.
 
-## Technical Skills
+CODESIGNED | Atlanta, GA (Remote)
+Product Manager & Software Engineer | Nov 2015 - Sep 2016
+- Designed and maintained on-premises and Azure infrastructure (site-to-site VPN, routing) for 20 large enterprise customers.
 
-- **Telecom billing:** billing mediation, revenue assurance, CDR/EDR/AMA usage records, ETL data pipelines, Nortel/Ericsson/Lucent switch data, rating, order-to-cash, BSS/OSS
-- **Automation and IaC:** Ansible, Terraform, CloudFormation, Docker, Kubernetes, GitLab CI, Azure DevOps, GitHub Actions, Jenkins, AWS CodePipeline
-- **Observability:** ELK (Elasticsearch, Logstash, Kibana), Splunk, Dynatrace, Prometheus
-- **Platforms:** Linux (RHEL, CentOS, Debian, Ubuntu), Solaris, AWS, Azure, GCP, OpenStack, SAN storage
-- **Programming:** Perl, Python, PHP, Ruby on Rails, JavaScript, Bash, PowerShell, C/C++, Oracle SQL
-- **Networking:** TCP/IP, IPv4/IPv6, routing and firewalls, packet analysis (libpcap, sockets), SIP/Asterisk
-- **Practices:** production support, incident response, root cause analysis, on-call, CI/CD, infrastructure as code, technical documentation, Agile
+SPRINT (now T-Mobile) | Overland Park, KS
+Software Engineer, Accounting Operations / Billing Mediation | Jul 2001 - Mar 2015
+- Decreased deployment errors 30% and sped releases 40% with a production change-management system built on Ansible and GitLab CI.
+- Cut time-to-resolution for actionable alarms 50% by deploying the ELK stack and HP OpenView for observability and alerting across multiple mediation platforms.
+- Anchored Tier III support, root cause analysis and on-call escalation for 14 years across every Sprint billing mediation platform, resolving critical issues with a 98% success rate and reducing service downtime 20%.
+- Saved $2 million annually versus a vendor solution by designing and leading development of an automated EDR routing application (Perl, Python, shell) that distributed switch usage records to rating, billing, fraud and analytics systems.
+- Sustained 99.999% uptime (about 5 minutes/year) for 14 years across the 50-server bare-metal and virtualized RHEL/CentOS/Ubuntu mediation estate through disciplined patching, vulnerability scanning, hardware selection and vendor acceptance testing.
 
-## Professional Experience
+## PROJECTS
+corkscrew | Creator and Maintainer | C, GNU Autotools, GitHub Actions | 2000 - Present | github.com/patpadgett/corkscrew
+Tunnels OpenSSH through HTTP/HTTPS proxies; 194 GitHub stars, 36 forks, GPL-2.0. Packaged in Debian, Ubuntu, Red Hat, CentOS, FreeBSD and Cygwin; reviewed in Linux Magazine (Issue 166, 2014) and 2600: The Hacker Quarterly, demonstrated in books and YouTube videos, and has its own Wikipedia article. 2026 modernization added GitHub Actions CI with regression tests and ASan/UBSan sanitizer builds, updated Autotools checks and a documented security model (SECURITY.md); reviews and merges community pull requests and supports distribution packagers.
 
-### Founder and CEO, VimOps, Kansas City metro
-
-*2020 - Present*
-
-- Delivered web development, digital marketing and custom software in Python and PHP for government contracts (CAGE 8PMQ9) as a registered federal vendor.
-- Automated client infrastructure with Ansible, Terraform, Docker and CI/CD (GitLab CI, GitHub Actions) across AWS, Azure and GCP.
-- Delivered a 10x social engagement lift for clients in two months.
-
-### Senior Infrastructure Automation Engineer, Jabil
-
-*2018 - 2019*
-
-- Cut deployment time for critical iFactory infrastructure by building CI/CD build and release pipelines in Azure DevOps with automated testing gates.
-- Containerized all iFactory applications with Docker and deployed them on Kubernetes; wrote infrastructure as code (Ansible) for on-prem and cloud environments.
-- Built centralized logging and ELK dashboards for troubleshooting by cross-functional engineering teams across the plant.
-
-### System Administrator (contract), Raymond James, Capital Markets
-
-*2017*
-
-- Served as Linux SME for the Capital Markets team running GBST Syn back-office trade processing.
-- Deployed releases across environments with Ansible and Jenkins pipelines; ran Splunk log analysis and Dynatrace monitoring.
-
-### Product Manager and Software Engineer, codesigned (SharePoint software company)
-
-*2015 - 2016*
-
-- Led development and product management for the SharePoint products "Intranet" and "Analytics".
-
-### Software Engineer (Accounting Operations), Sprint (now T-Mobile)
-
-*2001 - 2015*
-
-- Highest-tier (Tier 3) production support and incident response for all Sprint billing mediation platforms: the ETL data pipelines that collect, validate, rate and route wireless and wireline CDR/EDR usage records; root cause analysis and on-call escalation point for 14 years.
-- Designed and led development of an EDR routing application that collected switch usage records and distributed them to rating, billing, fraud and analytics systems; $2M in revenue assurance savings.
-- Increased mediation throughput 250% by re-architecting record processing across parallel processors using Perl, Oracle SQL and Linux.
-- Cut alarm time-to-resolution 50% by building observability and alerting on the ELK stack (Elasticsearch, Logstash and Kibana) for multiple mediation platforms.
-- Wrote a business-rule translation tool (Perl, Parse::RecDescent) and an Ansible + GitLab CI production change-management system; authored platform documentation cited by network operations leadership.
-- Delivered project D3884 ahead of an aggressive schedule and under budget with no customer service impact, coordinating stakeholders across network, finance and operations; commended by Sprint's Chief Network Officer for the result.
-
-### Founder, CyberRazor, part-time alongside Sprint
-
-*2005 - 2009*
-
-- Built Fasttrack, a Ruby on Rails web application for standard celeration charting used by behavior analysts, and trained educators on it; analyzed HCRIS healthcare cost data for tax firms; built small-business sites.
-
-### Systems Administrator and Network Engineer, various ISPs and consultancies
-
-*1996 - 2001*
-
-- Administered Unix systems and networks in the dial-up ISP era for ISPN, Century Computer Consultants, Interdirect/SupplyTrak, Cephas, Chemtrol and Advertisnet.
-
-## Open Source Projects
-
-- **corkscrew (2000 - Present)** - C program that tunnels OpenSSH through HTTP and HTTPS proxies. Packaged in Debian, Ubuntu, Red Hat, CentOS and FreeBSD; reviewed in Linux Magazine and 2600 Magazine. Source at github.com/patpadgett/corkscrew.
-
-## Education
-
-### Certificate, Graphic Arts, Lake Area Vocational Technical School, Camdenton, MO
-
-*1996 - 1998*
-
-- 2nd place, State of Missouri, VICA (Vocational Industrial Clubs of America) competition in offset lithography, running AB Dick and Ryobi presses.
-
-## Spoken Languages
-
-English (native); Indonesian (professional working proficiency).
+## EDUCATION AND PROFESSIONAL DEVELOPMENT
+Lake Career & Technical Center - Camdenton, Missouri | Certificate, Graphic Arts
+- Self-directed study in DevOps practices and Infrastructure as Code (2017-2018) leading directly to the Jabil Senior Infrastructure Automation Engineer role
+- Continuous hands-on training in Linux administration, ITSM/service delivery, cloud platforms, and automation scripting
